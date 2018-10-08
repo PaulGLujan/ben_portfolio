@@ -3,7 +3,7 @@ import NavColumn from './nav_column';
 
 export default ()=>(
   <div className="container">
-    <h1>Here is app.</h1>
+    <h1>Ben L. Nguyen</h1>
     <NavColumn/>
   </div>
 )
