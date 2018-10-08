@@ -1,5 +1,9 @@
 import React from 'react';
+import NavColumn from './nav_column';
 
 export default ()=>(
-  <h1>Here is app.</h1>
+  <div className="container">
+    <h1>Here is app.</h1>
+    <NavColumn/>
+  </div>
 )
