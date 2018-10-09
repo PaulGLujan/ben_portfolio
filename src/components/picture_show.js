@@ -5,7 +5,7 @@ import ImageToggle from './image_toggle'
 import ThumbnailReel from './thumbnail_reel';
 
 export default ()=>(
-  <div className="container">
+  <div className="container col-10">
     <h1>Picture show goes here.</h1>
     <ImageWindow/>
     <Caption/>
