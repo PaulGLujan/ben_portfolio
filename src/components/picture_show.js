@@ -7,8 +7,10 @@ import ThumbnailReel from './thumbnail_reel';
 export default ()=>(
   <div className="container col-10">
     <ImageWindow/>
-    <Caption/>
-    <ImageToggle/>
+    <div className='row justify-content-between'>
+      <Caption />
+      <ImageToggle />
+    </div>
     <ThumbnailReel/>
   </div>
 )
