@@ -6,7 +6,6 @@ import ThumbnailReel from './thumbnail_reel';
 
 export default ()=>(
   <div className="container col-10">
-    <h1>Picture show goes here.</h1>
     <ImageWindow/>
     <Caption/>
     <ImageToggle/>

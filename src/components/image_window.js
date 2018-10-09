@@ -5,7 +5,7 @@ class ImageWindow extends Component {
   render(){
     return(
       <div className="container">
-        <img src={nepal} alt="Nepal" className='col-4'/>
+        <img src={nepal} alt="Nepal" className='col-12'/>
       </div>
     )
   }
