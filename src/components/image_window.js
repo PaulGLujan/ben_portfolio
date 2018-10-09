@@ -1,9 +1,12 @@
 import React, {Component} from 'react';
+import nepal from '../images/nepal.png';
 
 class ImageWindow extends Component {
   render(){
     return(
-      <h1>Image Window spot</h1>
+      <div className="container">
+        <img src={nepal} alt="Nepal" className='col-4'/>
+      </div>
     )
   }
 }
