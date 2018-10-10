@@ -10,32 +10,8 @@ class ThumbnailReel extends Component {
   render(){
     return(
       <div className="container">
-        <Carousel showIndicators={false} showThumbs={false} selectedItem={0}>
-          <div>
-            <img src={nepal} />
-          </div>
-          <div>
-            <img src={welding} />
-          </div>
-          <div>
-            <img src={food} />
-          </div>
-          <div>
-            <img src={guitar} />
-          </div>
-        </Carousel>
+        <h1>Oh thumb reel</h1>
       </div>
-      // <div className="container row">
-      //   <h1><i className="fas fa-caret-left mr-5"></i></h1>
-      //   <div className="carouselWindow row">
-      //     <img src={nepal} alt="thumbnail" className='thumbnail img-thumbnail'/>
-      //     <img src={welding} alt="thumbnail" className='thumbnail img-thumbnail'/>
-      //     <img src={food} alt="thumbnail" className='thumbnail img-thumbnail' />
-      //     <img src={guitar} alt="thumbnail" className='thumbnail img-thumbnail' />
-      //     <img src={suit} alt="thumbnail" className='thumbnail img-thumbnail' />
-      //   </div>
-      //   <h1><i className="fas fa-caret-right ml-5"></i></h1>
-      // </div>
     )
   }
 }
