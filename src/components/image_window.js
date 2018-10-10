@@ -7,7 +7,7 @@ class ImageWindow extends Component {
   render(){
     return(
       <div className="container">
-        <Carousel>
+        <Carousel showIndicators={false}>
           <div>
             <img src={nepal}/>
             <p className="legend">Legend 1</p>
