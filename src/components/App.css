@@ -8,6 +8,6 @@
   overflow: hidden;
 }
 
-div>img {
+.sliderContainer img {
   width: 100px;
 }

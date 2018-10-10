@@ -13,21 +13,29 @@ class ThumbnailReel extends Component {
       dots: true,
       infinite: true,
       speed: 500,
-      slidesToShow: 1,
+      slidesToShow: 3,
       slidesToScroll: 1
     };
     return(
-      <Slider {...settings}>
-        <div>
-          <img src={nepal} alt="nepal"/>
-        </div>
-        <div>
-          <img src={welding} alt="welding" />
-        </div>
-        <div>
-          <img src={food} alt="food" />
-        </div>
-      </Slider>
+      <div className="sliderContainer">
+        <Slider {...settings}>
+          <div>
+            <img src={nepal} alt="nepal"/>
+          </div>
+          <div>
+            <img src={welding} alt="welding" />
+          </div>
+          <div>
+            <img src={food} alt="food" />
+          </div>
+          <div>
+            <img src={guitar} alt="guitar" />
+          </div>
+          <div>
+            <img src={suit} alt="suit" />
+          </div>
+        </Slider>
+      </div>
     )
   }
 }
