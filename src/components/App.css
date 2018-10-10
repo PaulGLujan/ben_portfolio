@@ -1,4 +1,9 @@
-.thumbnail{
+.thumbnail {
   max-width: auto;
   height: 100px;
- }
+}
+.carouselWindow {
+  width: 400px;
+  height: 100px;
+  overflow: hidden;
+}
