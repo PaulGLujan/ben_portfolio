@@ -1,9 +1,12 @@
 import React, {Component} from 'react';
+import nepal from '../images/nepal.png';
 
 class ThumbnailReel extends Component {
   render(){
     return(
-      <h1>Thumbnail Reel</h1>
+      <div className="container">
+        <img src={nepal} alt="thumbnail" className='thumbnail img-thumbnail'/>
+      </div>
     )
   }
 }
