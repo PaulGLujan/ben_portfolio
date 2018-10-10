@@ -4,6 +4,7 @@ import welding from '../images/welding.png';
 import food from '../images/food.jpg';
 import guitar from '../images/guitar.jpg';
 import { Carousel } from 'react-responsive-carousel';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 class ImageWindow extends Component {
   render(){
