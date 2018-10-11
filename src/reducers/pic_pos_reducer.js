@@ -1,5 +1,5 @@
 const DEFAULT_STATE = {
-  position: null,
+  picturePosition: 0,
 }
 
 export default (state=DEFAULT_STATE, action)=>{
