@@ -12,16 +12,16 @@ class ImageWindow extends Component {
       <div className="container">
         <Carousel showIndicators={false} showThumbs={false} selectedItem={0}>
           <div>
-            <img src={nepal}/>
+            <img src={nepal} alt='nepal'/>
           </div>
           <div>
-            <img src={welding}/>
+            <img src={welding} alt='welding'/>
           </div>
           <div>
-            <img src={food} />
+            <img src={food} alt='food'/>
           </div>
           <div>
-            <img src={guitar} />
+            <img src={guitar} alt='guitar'/>
           </div>
         </Carousel>
       </div>

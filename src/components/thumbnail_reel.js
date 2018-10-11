@@ -13,6 +13,13 @@ import Slider from "react-slick";
 
 
 class ThumbnailReel extends Component {
+  constructor(props){
+    super(props);
+    this.clickPic = this.clickPic.bind(this);
+  }
+  clickPic(){
+    console.log('clickPic')
+  }
   render(){
     const settings = {
       dots: true,
@@ -25,7 +32,7 @@ class ThumbnailReel extends Component {
       <div className="sliderContainer">
         <Slider {...settings}>
           <div>
-            <img src={nepal} alt="nepal"/>
+            <img src={nepal} alt="nepal" onClick={this.clickPic}/>
           </div>
           <div>
             <img src={welding} alt="welding" />
