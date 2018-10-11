@@ -4,14 +4,11 @@ import welding from '../images/welding.png';
 import food from '../images/food.jpg';
 import guitar from '../images/guitar.jpg';
 import suit from '../images/suit.jpg';
-
 import chinaPortrait from '../images/china_portrait.png';
 import jTree from '../images/joshua_tree.png';
 import lola from '../images/lola.png';
 import roxy from '../images/roxy.png';
 import tigerLeap from '../images/tiger_leaping_gorge.png';
-
-
 import Slider from "react-slick";
 
 
