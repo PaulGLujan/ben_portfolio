@@ -10,6 +10,7 @@ import lola from '../images/lola.png';
 import roxy from '../images/roxy.png';
 import tigerLeap from '../images/tiger_leaping_gorge.png';
 import Slider from "react-slick";
+import {updatePicPos} from '../actions/index';
 
 class ThumbnailReel extends Component {
   constructor(props){
@@ -17,7 +18,8 @@ class ThumbnailReel extends Component {
     this.clickPic = this.clickPic.bind(this);
   }
   clickPic(elm){
-    console.log('clickpic',elm)
+    console.log('clickPic', elm)
+    updatePicPos(elm);
   }
   render(){
     const settings = {
@@ -31,34 +33,34 @@ class ThumbnailReel extends Component {
       <div className="sliderContainer">
         <Slider {...settings}>
           <div>
-            <img src={nepal} alt="nepal" onClick={(e)=>{this.clickPic(e.target.getAttribute('alt'))}}/>
+            <img src={nepal} alt="nepal" num={0} onClick={(e)=>{this.clickPic(e.target.getAttribute('num'))}}/>
           </div>
           <div>
-            <img src={welding} alt="welding" onClick={(e) => { this.clickPic(e.target.getAttribute('alt')) }}/>
+            <img src={welding} alt="welding" num={1} onClick={(e) => { this.clickPic(e.target.getAttribute('num')) }}/>
           </div>
           <div>
-            <img src={food} alt="food" onClick={(e) => { this.clickPic(e.target.getAttribute('alt')) }}/>
+            <img src={food} alt="food" num={2} onClick={(e) => { this.clickPic(e.target.getAttribute('num')) }}/>
           </div>
           <div>
-            <img src={guitar} alt="guitar" onClick={(e) => { this.clickPic(e.target.getAttribute('alt')) }}/>
+            <img src={guitar} alt="guitar" num={3} onClick={(e) => { this.clickPic(e.target.getAttribute('num')) }}/>
           </div>
           <div>
-            <img src={suit} alt="suit" onClick={(e) => { this.clickPic(e.target.getAttribute('alt')) }}/>
+            <img src={suit} alt="suit" num={4} onClick={(e) => { this.clickPic(e.target.getAttribute('num')) }}/>
           </div>
           <div>
-            <img src={chinaPortrait} alt="chinaPortrait" onClick={(e) => { this.clickPic(e.target.getAttribute('alt')) }}/>
+            <img src={chinaPortrait} alt="chinaPortrait" num={5} onClick={(e) => { this.clickPic(e.target.getAttribute('num')) }}/>
           </div>
           <div>
-            <img src={jTree} alt="jTree" onClick={(e) => { this.clickPic(e.target.getAttribute('alt')) }}/>
+            <img src={jTree} alt="jTree" num={6} onClick={(e) => { this.clickPic(e.target.getAttribute('num')) }}/>
           </div>
           <div>
-            <img src={lola} alt="lola" onClick={(e) => { this.clickPic(e.target.getAttribute('alt')) }}/>
+            <img src={lola} alt="lola" num={7} onClick={(e) => { this.clickPic(e.target.getAttribute('num')) }}/>
           </div>
           <div>
-            <img src={roxy} alt="roxy" onClick={(e) => { this.clickPic(e.target.getAttribute('alt')) }}/>
+            <img src={roxy} alt="roxy" num={8} onClick={(e) => { this.clickPic(e.target.getAttribute('num')) }}/>
           </div>
           <div>
-            <img src={tigerLeap} alt="tigerLeap" onClick={(e) => { this.clickPic(e.target.getAttribute('alt')) }}/>
+            <img src={tigerLeap} alt="tigerLeap" num={9} onClick={(e) => { this.clickPic(e.target.getAttribute('num')) }}/>
           </div>
         </Slider>
       </div>
