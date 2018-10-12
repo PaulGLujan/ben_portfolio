@@ -1,4 +1,7 @@
 import React, {Component} from 'react';
+import {changeGallery} from '../actions/index';
+import {connect} from 'react-redux';
+import portraits from '../assets/images/portraits/portraits';
 
 class NavColumn extends Component {
   constructor(props){
@@ -6,7 +9,7 @@ class NavColumn extends Component {
     this.portraitClick = this.portraitClick.bind(this);
   }
   portraitClick(){
-    console.log('portrait click');
+    this.props.changeGallery(portraits);
   }
   render(){
     return(
@@ -19,4 +22,4 @@ class NavColumn extends Component {
   }
 }
 
-export default NavColumn;
+export default connect(null, {changeGallery})(NavColumn);
