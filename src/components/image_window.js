@@ -10,16 +10,23 @@ class ImageWindow extends Component {
     super(props);
     this.assembleImageDiv = this.assembleImageDiv.bind(this);
   }
+  componentDidUpdate(prevProps) {
+    if (prevProps.position !== this.props.position) {
+      this.slider.slickGoTo(this.props.position);
+    }
+  }
   assembleImageDiv(src, alt, name, key){
     return <ImageDiv src={src} alt={alt} name={name} key={key}/>
   }
   render(){
+    console.log('Position: ', this.props.position);
     const settings = {
       dots: true,
       infinite: true,
       speed: 500,
       slidesToShow: 1,
-      slidesToScroll: 1
+      slidesToScroll: 1,
+      fade: true,
     };
     const galArr = this.props.gallery;
     const outputArr = [];
@@ -29,7 +36,7 @@ class ImageWindow extends Component {
     return(
       <div className="container imageWindow">
         {/* <Carousel showIndicators={false} showThumbs={false} selectedItem={parseInt(this.props.position)}> */}
-        <Slider {...settings}>
+        <Slider ref={e => this.slider = e} {...settings}>
           {outputArr}
         </Slider>
         {/* </Carousel> */}

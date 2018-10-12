@@ -7,6 +7,7 @@ class ThumbnailReel extends Component {
   assembleImageDiv(src, alt, name, key) {
     return <ImageDiv src={src} alt={alt} name={name} key={key}/>
   }
+
   render(){
     const settings = {
       dots: true,
