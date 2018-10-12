@@ -1,6 +1,10 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
 
 class ImageToggle extends Component {
+  toggleLeft(){
+    console.log(this.props.position);
+  }
   render(){
     return(
       <div className="container col-4 row justify-content-between">
@@ -11,4 +15,10 @@ class ImageToggle extends Component {
   }
 }
 
-export default ImageToggle;
+function mapStateToProps(state) {
+  return {
+    position: state.picturePosition.position
+  }
+}
+
+export default connect(mapStateToProps)(ImageToggle);
