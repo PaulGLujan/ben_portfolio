@@ -7,6 +7,8 @@ const DEFAULT_STATE = {
 
 export default (state=DEFAULT_STATE, action)=>{
   switch(action.type){
+    case types.UPDATE_GALLERY:
+      return {...state, gallery: action.payload}
     default:
       return state;
   }
