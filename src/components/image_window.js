@@ -6,24 +6,28 @@ import React, {Component} from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import {connect} from 'react-redux';
+import ImageDiv from './carousel_image';
 
 class ImageWindow extends Component {
+  constructor(props){
+    super(props);
+    this.assembleImageDiv = this.assembleImageDiv.bind(this);
+  }
+  assembleImageDiv(src, alt, name, key){
+    return <ImageDiv src={src} alt={alt} name={name} key={key}/>
+  }
   render(){
+    console.log(this.props.gallery);
+    const galArr = this.props.gallery;
+    const outputArr = [];
+    for (let i=0; i<galArr.length; i++){
+      outputArr.push(this.assembleImageDiv(galArr[i], 'pic'+i, i, 'pic'+i));
+    }
+    console.log(outputArr);
     return(
       <div className="container">
         <Carousel showIndicators={false} showThumbs={false} selectedItem={parseInt(this.props.position)}>
-          {/* <div>
-            <img src={nepal} alt='nepal'/>
-          </div>
-          <div>
-            <img src={welding} alt='welding'/>
-          </div>
-          <div>
-            <img src={food} alt='food'/>
-          </div>
-          <div>
-            <img src={guitar} alt='guitar'/>
-          </div> */}
+          {outputArr}
         </Carousel>
       </div>
     )
@@ -32,7 +36,8 @@ class ImageWindow extends Component {
 
 function mapStateToProps(state) {
   return {
-    position: state.picturePosition.position
+    position: state.picturePosition.position,
+    gallery: state.gallery.gallery,
   }
 }
 
