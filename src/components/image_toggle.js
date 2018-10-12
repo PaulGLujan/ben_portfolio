@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
+import { updatePicPos } from '../actions';
 
 class ImageToggle extends Component {
   constructor(props){
@@ -8,10 +9,12 @@ class ImageToggle extends Component {
     this.toggleRight = this.toggleRight.bind(this);
   }
   toggleLeft(){
-    console.log('left', this.props.position);
+    let position = parseInt(this.props.position) - 1;
+    this.props.updatePicPos(position);
   }
   toggleRight() {
-    console.log('right', this.props.position);
+    let position = parseInt(this.props.position) + 1;
+    this.props.updatePicPos(position);
   }
   render(){
     return(
@@ -29,4 +32,4 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps)(ImageToggle);
+export default connect(mapStateToProps, {updatePicPos})(ImageToggle);
