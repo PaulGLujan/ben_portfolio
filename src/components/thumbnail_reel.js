@@ -11,6 +11,7 @@ import roxy from '../images/roxy.png';
 import tigerLeap from '../images/tiger_leaping_gorge.png';
 import Slider from "react-slick";
 import {updatePicPos} from '../actions/index';
+import { connect } from 'react-redux';
 
 class ThumbnailReel extends Component {
   constructor(props){
@@ -18,8 +19,7 @@ class ThumbnailReel extends Component {
     this.clickPic = this.clickPic.bind(this);
   }
   clickPic(elm){
-    console.log('clickPic', elm)
-    updatePicPos(elm);
+    this.props.updatePicPos(elm);
   }
   render(){
     const settings = {
@@ -68,4 +68,4 @@ class ThumbnailReel extends Component {
   }
 }
 
-export default ThumbnailReel;
+export default connect(null, {updatePicPos})(ThumbnailReel);

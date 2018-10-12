@@ -8,6 +8,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import {connect} from 'react-redux';
 
 class ImageWindow extends Component {
+  
   render(){
     return(
       <div className="container">
