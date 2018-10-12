@@ -12,7 +12,7 @@ class ThumbnailReel extends Component {
       dots: true,
       infinite: true,
       speed: 500,
-      slidesToShow: 5,
+      slidesToShow: 10,
       slidesToScroll: 1
     };
     const galArr = this.props.gallery;
