@@ -1,4 +1,13 @@
 .sliderContainer img {
   max-width: auto;
-  height: 100px;
+  height: 9vh;
+}
+.carousel .thumb img {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.carousel .slide img {
+    max-height: 75vh;  /* change this to whatever you want */
+    width: auto;
 }
