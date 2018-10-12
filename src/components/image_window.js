@@ -5,12 +5,13 @@ import food from '../images/food.jpg';
 import guitar from '../images/guitar.jpg';
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import {connect} from 'react-redux';
 
 class ImageWindow extends Component {
   render(){
     return(
       <div className="container">
-        <Carousel showIndicators={false} showThumbs={false} selectedItem={0}>
+        <Carousel showIndicators={false} showThumbs={false} selectedItem={parseInt(this.props.position)}>
           <div>
             <img src={nepal} alt='nepal'/>
           </div>
@@ -29,4 +30,10 @@ class ImageWindow extends Component {
   }
 }
 
-export default ImageWindow;
+function mapStateToProps(state) {
+  return {
+    position: state.picturePosition.position
+  }
+}
+
+export default connect(mapStateToProps)(ImageWindow);
