@@ -8,7 +8,7 @@ export default ()=>(
     <h1>Ben L. Nguyen</h1>
     <div className='row'>
       <NavColumn />
-      <PictureShow />
+      {/* <PictureShow /> */}
     </div>
   </div>
 )

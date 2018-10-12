@@ -1,14 +1,4 @@
 import React, {Component} from 'react';
-import nepal from '../images/nepal.png';
-import welding from '../images/welding.png';
-import food from '../images/food.jpg';
-import guitar from '../images/guitar.jpg';
-import suit from '../images/suit.jpg';
-import chinaPortrait from '../images/china_portrait.png';
-import jTree from '../images/joshua_tree.png';
-import lola from '../images/lola.png';
-import roxy from '../images/roxy.png';
-import tigerLeap from '../images/tiger_leaping_gorge.png';
 import Slider from "react-slick";
 import {updatePicPos} from '../actions/index';
 import { connect } from 'react-redux';
@@ -32,7 +22,7 @@ class ThumbnailReel extends Component {
     return(
       <div className="sliderContainer">
         <Slider {...settings}>
-          <div>
+          {/* <div>
             <img src={nepal} alt="nepal" num={0} onClick={(e)=>{this.clickPic(e.target.getAttribute('num'))}}/>
           </div>
           <div>
@@ -61,7 +51,7 @@ class ThumbnailReel extends Component {
           </div>
           <div>
             <img src={tigerLeap} alt="tigerLeap" num={9} onClick={(e) => { this.clickPic(e.target.getAttribute('num')) }}/>
-          </div>
+          </div> */}
         </Slider>
       </div>
     )
