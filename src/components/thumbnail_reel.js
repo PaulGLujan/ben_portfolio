@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Slider from "react-slick";
 import {updatePicPos} from '../actions/index';
 import { connect } from 'react-redux';
+import ImageDiv from './carousel_image';
 
 class ThumbnailReel extends Component {
   constructor(props){
@@ -11,6 +12,9 @@ class ThumbnailReel extends Component {
   clickPic(elm){
     this.props.updatePicPos(elm);
   }
+  assembleImageDiv(src, alt, name, key) {
+    return <ImageDiv src={src} alt={alt} name={name} key={key} onClick={(e) => { this.clickPic(e.target.getAttribute('num')) }}/>
+  }
   render(){
     const settings = {
       dots: true,
@@ -19,9 +23,15 @@ class ThumbnailReel extends Component {
       slidesToShow: 5,
       slidesToScroll: 1
     };
+    const galArr = this.props.gallery;
+    const outputArr = [];
+    for (let i = 0; i < galArr.length; i++) {
+      outputArr.push(this.assembleImageDiv(galArr[i], 'pic' + i, i, 'pic' + i));
+    }
     return(
       <div className="sliderContainer">
         <Slider {...settings}>
+          {outputArr}
           {/* <div>
             <img src={nepal} alt="nepal" num={0} onClick={(e)=>{this.clickPic(e.target.getAttribute('num'))}}/>
           </div>
@@ -58,4 +68,10 @@ class ThumbnailReel extends Component {
   }
 }
 
-export default connect(null, {updatePicPos})(ThumbnailReel);
+function mapStateToProps(state) {
+  return {
+    gallery: state.gallery.gallery,
+  }
+}
+
+export default connect(mapStateToProps, {updatePicPos})(ThumbnailReel);
