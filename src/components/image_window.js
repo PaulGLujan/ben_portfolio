@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import { Carousel } from 'react-responsive-carousel';
-import "react-responsive-carousel/lib/styles/carousel.min.css";
+// import { Carousel } from 'react-responsive-carousel';
+// import "react-responsive-carousel/lib/styles/carousel.min.css";
+import Slider from "react-slick";
 import {connect} from 'react-redux';
 import ImageDiv from './carousel_image';
 
@@ -20,9 +21,9 @@ class ImageWindow extends Component {
     }
     return(
       <div className="container imageWindow">
-        <Carousel showIndicators={false} showThumbs={false} selectedItem={parseInt(this.props.position)}>
+        {/* <Carousel showIndicators={false} showThumbs={false} selectedItem={parseInt(this.props.position)}> */}
           {outputArr}
-        </Carousel>
+        {/* </Carousel> */}
       </div>
     )
   }
