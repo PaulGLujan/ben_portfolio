@@ -18,7 +18,7 @@ class ImageToggle extends Component {
   }
   render(){
     return(
-      <div className="col-4 row justify-content-between">
+      <div className="col-xs-12 col-sm-6 col-md-4 col-lg-3 row justify-content-between">
         <h3 onClick={this.toggleLeft}><i className="fas fa-caret-left"></i> Previous</h3>
         <h3 onClick={this.toggleRight} className='mr-4'>Next <i className="fas fa-caret-right"></i></h3>
       </div>
