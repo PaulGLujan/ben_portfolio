@@ -21,12 +21,13 @@ class ImageWindow extends Component {
   render(){
     console.log('Position: ', this.props.position);
     const settings = {
-      dots: true,
+      dots: false,
       infinite: true,
       speed: 500,
       slidesToShow: 1,
       slidesToScroll: 1,
       fade: true,
+      arrows: false
     };
     const galArr = this.props.gallery;
     const outputArr = [];
@@ -34,7 +35,7 @@ class ImageWindow extends Component {
       outputArr.push(this.assembleImageDiv(galArr[i], 'pic'+i, i, 'pic'+i));
     }
     return(
-      <div className="container imageWindow">
+      <div className="imageWindow">
         {/* <Carousel showIndicators={false} showThumbs={false} selectedItem={parseInt(this.props.position)}> */}
         <Slider ref={e => this.slider = e} {...settings}>
           {outputArr}
