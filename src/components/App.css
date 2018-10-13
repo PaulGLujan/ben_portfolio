@@ -2,6 +2,10 @@
   max-width: auto;
   height: 9vh;
 }
+.imageWindow img {
+  max-width: auto;
+  height: 75vh;
+}
 .carousel .thumb img {
     width: 100% !important;
     height: 100% !important;
