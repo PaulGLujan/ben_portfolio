@@ -18,10 +18,15 @@ class NavColumn extends Component {
   }
   render(){
     return(
-      <div className="container col-2 align-self-end mb-5">
-        <h3 className='mt-1' onClick={this.landscapesClick}>Landscapes</h3>
-        <h3 className='mt-1' onClick={this.portraitClick}>Portraits</h3>
-        <h3 className='mt-1'>Contact</h3>
+      <div className="col-2 flex-column justify-content-between d-flex">
+        <div>
+          <h1 className="">Ben</h1>
+        </div>
+        <div className="mb-5">
+            <h3 className='mt-1' onClick={this.landscapesClick}>Landscapes</h3>
+            <h3 className='mt-1' onClick={this.portraitClick}>Portraits</h3>
+            <h3 className='mt-1'>Contact</h3>
+        </div>
       </div>
     )
   }
