@@ -4,8 +4,10 @@ import PictureShow from './picture_show';
 import './App.css';
 
 export default ()=>(
+  <div className="container">
     <div className='container row'>
       <NavColumn />
       <PictureShow />
     </div>
+  </div>
 )
