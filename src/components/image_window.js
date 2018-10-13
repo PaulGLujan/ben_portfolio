@@ -35,7 +35,7 @@ class ImageWindow extends Component {
       outputArr.push(this.assembleImageDiv(galArr[i], 'pic'+i, i, 'pic'+i));
     }
     return(
-      <div className="container imageWindow">
+      <div className="imageWindow">
         {/* <Carousel showIndicators={false} showThumbs={false} selectedItem={parseInt(this.props.position)}> */}
         <Slider ref={e => this.slider = e} {...settings}>
           {outputArr}
