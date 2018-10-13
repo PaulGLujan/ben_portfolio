@@ -1,8 +1,8 @@
 import types from "../actions/types";
-import portraits from "../assets/images/portraits/portraits";
+import landscapes from "../assets/images/landscapes/landscapes";
 
 const DEFAULT_STATE = {
-  gallery: portraits,
+  gallery: landscapes,
 }
 
 export default (state=DEFAULT_STATE, action)=>{
