@@ -27,6 +27,7 @@ class ImageWindow extends Component {
       slidesToShow: 1,
       slidesToScroll: 1,
       fade: true,
+      arrows: false
     };
     const galArr = this.props.gallery;
     const outputArr = [];
