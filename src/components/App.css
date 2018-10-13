@@ -3,6 +3,7 @@ html {
 }
 h1, h3 {
   font-family: 'Eczar', serif;
+  color: #6d6c6c
 }
 .sliderContainer img {
   max-width: auto;
