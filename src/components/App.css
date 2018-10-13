@@ -1,3 +1,6 @@
+h1, h3 {
+  font-family: 'Eczar', serif;
+}
 .sliderContainer img {
   max-width: auto;
   height: 9vh;
