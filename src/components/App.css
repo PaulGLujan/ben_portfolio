@@ -13,3 +13,6 @@ h1, h3 {
   max-width: auto;
   height: 75vh;
 }
+.pointer-cursor {
+  cursor: pointer;
+}

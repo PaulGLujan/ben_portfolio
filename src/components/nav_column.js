@@ -25,9 +25,9 @@ class NavColumn extends Component {
           <h1>Nguyen</h1>
         </div>
         <div className="mb-5 ml-5">
-            <h3 className='mt-1' onClick={this.landscapesClick}>Landscapes</h3>
-            <h3 className='mt-1' onClick={this.portraitClick}>Portraits</h3>
-            <h3 className='mt-1'>Contact</h3>
+          <h3 className='mt-1 pointer-cursor' onClick={this.landscapesClick}>Landscapes</h3>
+          <h3 className='mt-1 pointer-cursor' onClick={this.portraitClick}>Portraits</h3>
+          <h3 className='mt-1 pointer-cursor'>Contact</h3>
         </div>
       </div>
     )

@@ -23,7 +23,7 @@ class ThumbnailReel extends Component {
       thumbnailArr.push(this.assembleImageDiv(galArr[i], 'pic' + i, i, 'pic' + i));
     }
     return(
-      <div className="sliderContainer">
+      <div className="sliderContainer pointer-cursor">
         <Slider {...settings}>
           {thumbnailArr}
         </Slider>
