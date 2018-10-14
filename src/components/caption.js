@@ -12,10 +12,8 @@ class Caption extends Component {
   }
   render(){
     const caption = this.getCaption();
-    console.log('Position: ', this.props.position);
-    console.log('Gallery:', this.props.gallery);
     return(
-      <div className="col-2">
+      <div className="col-xs-12 col-sm-6">
         <h3 className="">{caption}</h3>
       </div>
     )
