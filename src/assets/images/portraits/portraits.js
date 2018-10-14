@@ -10,14 +10,44 @@ import portrait9 from './portrait9.jpg';
 import portrait10 from './portrait10.jpg';
 
 export default [
-  portrait1,
-  portrait2,
-  portrait3,
-  portrait4,
-  portrait5,
-  portrait6,
-  portrait7,
-  portrait8,
-  portrait9,
-  portrait10,
+  {
+    pic: portrait1,
+    caption: 'Alex'
+  },
+  {
+    pic: portrait2,
+    caption: 'Paul'
+  },
+  {
+    pic: portrait3,
+    caption: 'Autumn'
+  },
+  {
+    pic: portrait4,
+    caption: 'Emily'
+  },
+  {
+    pic: portrait5,
+    caption: 'Mika'
+  },
+  {
+    pic: portrait6,
+    caption: 'Yulia'
+  },
+  {
+    pic: portrait7,
+    caption: 'Garrett and Jo, Engagement'
+  },
+  {
+    pic: portrait8,
+    caption: 'Garrett and Jo, Engagement'
+  },
+  {
+    pic: portrait9,
+    caption: 'David'
+  },
+  {
+    pic: portrait10,
+    caption: 'Andrew'
+  },
 ]

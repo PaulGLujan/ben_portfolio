@@ -19,7 +19,6 @@ class ImageWindow extends Component {
     return <ImageDiv src={src} alt={alt} name={name} key={key}/>
   }
   render(){
-    console.log('Position: ', this.props.position);
     const settings = {
       dots: false,
       infinite: true,
@@ -32,15 +31,13 @@ class ImageWindow extends Component {
     const galArr = this.props.gallery;
     const outputArr = [];
     for (let i=0; i<galArr.length; i++){
-      outputArr.push(this.assembleImageDiv(galArr[i], 'pic'+i, i, 'pic'+i));
+      outputArr.push(this.assembleImageDiv(galArr[i]['pic'], 'pic'+i, i, 'pic'+i));
     }
     return(
       <div className="imageWindow">
-        {/* <Carousel showIndicators={false} showThumbs={false} selectedItem={parseInt(this.props.position)}> */}
         <Slider ref={e => this.slider = e} {...settings}>
           {outputArr}
         </Slider>
-        {/* </Carousel> */}
       </div>
     )
   }
