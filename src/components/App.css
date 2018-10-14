@@ -7,11 +7,11 @@ h1, h3 {
 }
 .sliderContainer img {
   max-width: auto;
-  height: 9vh;
+  height: 7.2vh;
 }
 .imageWindow img {
   max-width: auto;
-  height: 75vh;
+  height: 80vh;
 }
 .pointer-cursor {
   cursor: pointer;
