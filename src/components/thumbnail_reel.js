@@ -20,7 +20,7 @@ class ThumbnailReel extends Component {
     const galArr = this.props.gallery;
     const thumbnailArr = [];
     for (let i = 0; i < galArr.length; i++) {
-      thumbnailArr.push(this.assembleImageDiv(galArr[i], 'pic' + i, i, 'pic' + i));
+      thumbnailArr.push(this.assembleImageDiv(galArr[i]['pic'], 'pic' + i, i, 'pic' + i));
     }
     return(
       <div className="sliderContainer pointer-cursor">
