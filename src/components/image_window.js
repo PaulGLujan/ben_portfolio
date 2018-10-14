@@ -19,7 +19,6 @@ class ImageWindow extends Component {
     return <ImageDiv src={src} alt={alt} name={name} key={key}/>
   }
   render(){
-    console.log('Position: ', this.props.position);
     const settings = {
       dots: false,
       infinite: true,
