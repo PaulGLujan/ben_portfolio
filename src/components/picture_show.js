@@ -5,7 +5,7 @@ import ImageToggle from './image_toggle'
 import ThumbnailReel from './thumbnail_reel';
 
 export default ()=>(
-  <div className="container col-10">
+  <div className="container col-10 mt-3">
     <ImageWindow/>
     <div className='row justify-content-between mt-1'>
       <Caption />
