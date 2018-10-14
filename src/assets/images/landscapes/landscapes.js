@@ -16,38 +16,38 @@ export default [
   },
   {
     pic: pic2,
-    caption: ''
+    caption: 'San Clemente Pier'
   },
   {
     pic: pic3,
-    caption: ''
+    caption: 'Heisler Park, Laguna Beach'
   },
   {
     pic: pic4,
-    caption: ''
+    caption: 'The Slot, Anza Borrego Desert'
   },
   {
     pic: pic5,
-    caption: ''
+    caption: 'Rocks at Sunset'
   },
   {
     pic: pic6,
-    caption: ''
+    caption: 'Aliso Creek'
   },
   {
     pic: pic7,
-    caption: ''
+    caption: 'Aliso Beach'
   },
   {
     pic: pic8,
-    caption: ''
+    caption: 'Corona Del Mar'
   },
   {
     pic: pic9,
-    caption: ''
+    caption: 'Diver\'s Cove, Laguna Beach'
   },
   {
     pic: pic10,
-    caption: ''
+    caption: 'Scripps Pier, La Jolla'
   },
 ]
