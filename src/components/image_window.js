@@ -9,6 +9,7 @@ class ImageWindow extends Component {
   constructor(props){
     super(props);
     this.assembleImageDiv = this.assembleImageDiv.bind(this);
+    this.assembleGalleryDivs = this.assembleGalleryDivs.bind(this);
   }
   componentDidUpdate(prevProps) {
     if (prevProps.position !== this.props.position) {
@@ -17,6 +18,16 @@ class ImageWindow extends Component {
   }
   assembleImageDiv(src, alt, name, key){
     return <ImageDiv src={src} alt={alt} name={name} key={key}/>
+  }
+  assembleGalleryDivs(){
+    const galArr = this.props.gallery;
+    const outputArr = [];
+    for (let i = 0; i < galArr.length; i++) {
+      outputArr.push(
+        this.assembleImageDiv(galArr[i]['pic'], 'pic' + i, i, 'pic' + i)
+      );
+    }
+    return outputArr;
   }
   render(){
     const settings = {
@@ -29,15 +40,10 @@ class ImageWindow extends Component {
       arrows: false,
       lazyLoad: true,
     };
-    const galArr = this.props.gallery;
-    const outputArr = [];
-    for (let i=0; i<galArr.length; i++){
-      outputArr.push(this.assembleImageDiv(galArr[i]['pic'], 'pic'+i, i, 'pic'+i));
-    }
     return(
       <div className="imageWindow">
         <Slider ref={e => this.slider = e} {...settings}>
-          {outputArr}
+          {this.assembleGalleryDivs()}
         </Slider>
       </div>
     )
