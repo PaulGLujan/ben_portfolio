@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import NavColumn from './nav_column';
-import PictureShow from './picture_show';
 import './App.css';
+import { connect } from 'react-redux';
 
 class App extends Component {
   render(){
@@ -9,11 +9,17 @@ class App extends Component {
       <div className="container">
         <div className='container row'>
           <NavColumn />
-          <PictureShow />
+          <this.props.mainContent />
         </div>
       </div>
     )
   }
 }
 
-export default App;
+function mapStateToProps(state) {
+  return {
+    mainContent: state.mainContent.mainContent,
+  }
+}
+
+export default connect(mapStateToProps)(App);
