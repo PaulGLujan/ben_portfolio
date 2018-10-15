@@ -15,7 +15,8 @@ class ThumbnailReel extends Component {
       speed: 500,
       slidesToShow: 10,
       slidesToScroll: 1,
-      arrows: false
+      arrows: false,
+      lazyLoad: true,
     };
     const galArr = this.props.gallery;
     const thumbnailArr = [];

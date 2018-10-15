@@ -3,6 +3,7 @@ import landscapes from "../assets/images/landscapes/landscapes";
 
 const DEFAULT_STATE = {
   gallery: landscapes,
+  numOfPics: 10,
 }
 
 export default (state=DEFAULT_STATE, action)=>{
