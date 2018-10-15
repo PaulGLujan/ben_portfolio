@@ -9,16 +9,17 @@ class ImageToggle extends Component {
     this.toggleRight = this.toggleRight.bind(this);
   }
   toggleLeft(){
-    let position = parseInt(this.props.position) - 1;
-    if(position>=0){
-      this.props.updatePicPos(position);
+    const {position, updatePicPos} = this.props;
+    let leftPos = position - 1;
+    if(leftPos>=0){
+      updatePicPos(position);
     }
   }
   toggleRight() {
-    const {position, numOfPics} = this.props
+    const {position, numOfPics, updatePicPos} = this.props
     let rightPos = position + 1;
     if(rightPos<numOfPics){
-      this.props.updatePicPos(rightPos);
+      updatePicPos(rightPos);
     }
   }
   render(){
