@@ -1,13 +1,25 @@
-import React from 'react';
+import React, {Component} from 'react';
 import NavColumn from './nav_column';
-import PictureShow from './picture_show';
 import './App.css';
+import { connect } from 'react-redux';
 
-export default ()=>(
-  <div className="container">
-    <div className='container row'>
-      <NavColumn />
-      <PictureShow />
-    </div>
-  </div>
-)
+class App extends Component {
+  render(){
+    return(
+      <div className="container">
+        <div className='container row'>
+          <NavColumn />
+          <this.props.mainContent />
+        </div>
+      </div>
+    )
+  }
+}
+
+function mapStateToProps(state) {
+  return {
+    mainContent: state.mainContent.mainContent,
+  }
+}
+
+export default connect(mapStateToProps)(App);
