@@ -13,3 +13,10 @@ export function changeGallery(gallery){
     payload: gallery,
   }
 }
+
+export function updateMainSection(section){
+  return{
+    type: types.UPDATE_MAIN_SECTION,
+    payload: section
+  }
+}
