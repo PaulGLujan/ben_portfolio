@@ -1,7 +1,7 @@
 html {
   font-size: 10px;
 }
-h1, h3 {
+h1,h2,h3,h4,h5,a {
   font-family: 'Eczar', serif;
   color: #6d6c6c
 }
