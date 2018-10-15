@@ -12,7 +12,7 @@ class ImageToggle extends Component {
     const {position, updatePicPos} = this.props;
     let leftPos = position - 1;
     if(leftPos>=0){
-      updatePicPos(position);
+      updatePicPos(leftPos);
     }
   }
   toggleRight() {
