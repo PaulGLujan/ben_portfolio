@@ -39,7 +39,7 @@ class NavColumn extends Component {
           <h3 className='mt-1 pointer-cursor' onClick={landscapesClick}>Landscapes</h3>
           <h3 className='mt-1 pointer-cursor' onClick={portraitClick}>Portraits</h3>
           <h3 className='mt-1 pointer-cursor' onClick={contactClick}>Contact</h3>
-          <h3><a target='_blank' href="https://www.google.com/"><i class="fab fa-instagram"></i></a></h3>
+          <h3><a target='_blank' href="https://www.instagram.com/another.passenger/"><i class="fab fa-instagram"></i></a></h3>
         </div>
       </div>
     )
