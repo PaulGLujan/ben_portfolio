@@ -45,8 +45,10 @@ class contactSection extends Component {
         <Field name="firstName" label="Name" type="text" value={firstName} onChange={this.handleInputChange} />
         <Field name="lastName" label="Email" type="text" value={lastName} onChange={this.handleInputChange} />
         <Field name="phone" label="Phone" type="tel" value={phone} onChange={this.handleInputChange} />
-        <Field name="email" label="Comments" type="email" value={email} onChange={this.handleInputChange} />
-
+        <div class="form-group">
+          <label for="comment">Comments:</label>
+          <textarea class="form-control" rows="5" id="comment"></textarea>
+        </div>
         <button>Add Contact</button>
       </form>
     )
