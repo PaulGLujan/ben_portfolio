@@ -42,10 +42,10 @@ class contactSection extends Component {
 
     return (
       <form onSubmit={this.handleSubmit}>
-        <Field name="firstName" label="First Name" type="text" value={firstName} onChange={this.handleInputChange} />
-        <Field name="lastName" label="Last Name" type="text" value={lastName} onChange={this.handleInputChange} />
-        <Field name="phone" label="Phone Number" type="tel" value={phone} onChange={this.handleInputChange} />
-        <Field name="email" label="Email" type="email" value={email} onChange={this.handleInputChange} />
+        <Field name="firstName" label="Name" type="text" value={firstName} onChange={this.handleInputChange} />
+        <Field name="lastName" label="Email" type="text" value={lastName} onChange={this.handleInputChange} />
+        <Field name="phone" label="Phone" type="tel" value={phone} onChange={this.handleInputChange} />
+        <Field name="email" label="Comments" type="email" value={email} onChange={this.handleInputChange} />
 
         <button>Add Contact</button>
       </form>
