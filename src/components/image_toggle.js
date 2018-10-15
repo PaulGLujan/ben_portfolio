@@ -15,8 +15,11 @@ class ImageToggle extends Component {
     }
   }
   toggleRight() {
-    let position = parseInt(this.props.position) + 1;
-    this.props.updatePicPos(position);
+    const {position, numOfPics} = this.props
+    let rightPos = position + 1;
+    if(rightPos<numOfPics){
+      this.props.updatePicPos(rightPos);
+    }
   }
   render(){
     return(
@@ -30,7 +33,8 @@ class ImageToggle extends Component {
 
 function mapStateToProps(state) {
   return {
-    position: state.picturePosition.position
+    position: state.picturePosition.position,
+    numOfPics: state.gallery.numOfPics,
   }
 }
 
