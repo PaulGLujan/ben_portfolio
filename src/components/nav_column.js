@@ -32,6 +32,8 @@ class NavColumn extends Component {
           <h1 className="">Benjamin</h1>
           <h1>L.</h1>
           <h1>Nguyen</h1>
+          <hr/>
+          <h1><i class="fas fa-camera-retro"></i></h1>
         </div>
         <div className="mb-5 ml-5">
           <h3 className='mt-1 pointer-cursor' onClick={landscapesClick}>Landscapes</h3>
