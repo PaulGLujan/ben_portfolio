@@ -8,46 +8,66 @@ import portrait7 from './portrait7.jpg';
 import portrait8 from './portrait8.jpg';
 import portrait9 from './portrait9.jpg';
 import portrait10 from './portrait10.jpg';
+import portrait1xs from './portrait1xs.jpg';
+import portrait2xs from './portrait2xs.jpg';
+import portrait3xs from './portrait3xs.jpg';
+import portrait4xs from './portrait4xs.jpg';
+import portrait5xs from './portrait5xs.jpg';
+import portrait6xs from './portrait6xs.jpg';
+import portrait7xs from './portrait7xs.jpg';
+import portrait8xs from './portrait8xs.jpg';
+import portrait9xs from './portrait9xs.jpg';
+import portrait10xs from './portrait10xs.jpg';
 
 export default [
   {
     pic: portrait1,
-    caption: 'Alex'
+    caption: 'Alex',
+    thumbnail: portrait1xs,
   },
   {
     pic: portrait2,
-    caption: 'Paul'
+    caption: 'Paul',
+    thumbnail: portrait2xs,
   },
   {
     pic: portrait3,
-    caption: 'Autumn'
+    caption: 'Autumn',
+    thumbnail: portrait3xs,
   },
   {
     pic: portrait4,
-    caption: 'Emily'
+    caption: 'Emily',
+    thumbnail: portrait4xs,
   },
   {
     pic: portrait5,
-    caption: 'Mika'
+    caption: 'Mika',
+    thumbnail: portrait5xs,
   },
   {
     pic: portrait6,
-    caption: 'Yulia'
+    caption: 'Yulia',
+    thumbnail: portrait6xs,
   },
   {
     pic: portrait7,
-    caption: 'Garrett and Jo, Engagement'
+    caption: 'Garrett and Jo, Engagement',
+    thumbnail: portrait7xs,
   },
   {
     pic: portrait8,
-    caption: 'Garrett and Jo, Engagement'
+    caption: 'Garrett and Jo, Engagement',
+    thumbnail: portrait8xs,
   },
   {
     pic: portrait9,
-    caption: 'David'
+    caption: 'David',
+    thumbnail: portrait9xs,
   },
   {
     pic: portrait10,
-    caption: 'Andrew'
+    caption: 'Andrew',
+    thumbnail: portrait10xs,
   },
 ]
