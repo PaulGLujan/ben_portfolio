@@ -16,15 +16,15 @@ class ImageWindow extends Component {
       this.slider.slickGoTo(this.props.position);
     }
   }
-  assembleImageDiv(src, alt, name, key){
-    return <ImageDiv src={src} alt={alt} name={name} key={key}/>
+  assembleImageDiv(imgLg, imgSm, alt){
+    return <ImageDiv imgLg={imgLg} imgSm={imgSm} alt={alt}/>
   }
   assembleGalleryDivs(){
     const galArr = this.props.gallery;
     const outputArr = [];
-    for (let i = 0; i < galArr.length; i++) {
+    for (let i = 0; i < 1; i++) {
       outputArr.push(
-        this.assembleImageDiv(galArr[i]['pic'], 'pic' + i, i, 'pic' + i)
+        this.assembleImageDiv(galArr[i]['pic'], galArr[i]['medium'], 'pic'+i)
       );
     }
     return outputArr;

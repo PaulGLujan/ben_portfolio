@@ -18,12 +18,14 @@ import pic7xs from './pic7xs.jpg';
 import pic8xs from './pic8xs.jpg';
 import pic9xs from './pic9xs.jpg';
 import pic10xs from './pic10xs.jpg';
+import pic1md from './pic1md.jpg';
 
 export default [
   {
     pic: pic1, 
     caption: 'Turkey Run State Park, Indiana',
     thumbnail: pic1xs,
+    medium: pic1md,
   },
   {
     pic: pic2,
