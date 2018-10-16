@@ -22,7 +22,7 @@ class ImageWindow extends Component {
   assembleGalleryDivs(){
     const galArr = this.props.gallery;
     const outputArr = [];
-    for (let i = 0; i < 1; i++) {
+    for (let i = 0; i < galArr.length; i++) {
       outputArr.push(
         this.assembleImageDiv(galArr[i]['pic'], galArr[i]['medium'], 'pic'+i)
       );
