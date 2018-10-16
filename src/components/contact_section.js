@@ -6,7 +6,7 @@ export default ()=>(
     <div className="contactSection mt-3">
       <ContactForm />
     </div>
-    <h3 className="pseudoToggleBar clearfix mt-1 mb-3">A</h3>
+    <div className="pseudoToggleBar clearfix mt-1 mb-2"></div>
     {/* <div className="pseudoToggleBar mt-1"></div> */}
     <div className="contactFooter"></div>
   </div>

@@ -19,5 +19,5 @@ h1,h2,h3,h4,h5,a,label, button {
   cursor: pointer;
 }
 .pseudoToggleBar {
-  height: 1.75rem;
+  height: 21px;
 }
