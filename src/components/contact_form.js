@@ -41,16 +41,23 @@ class ContactForm extends Component {
     const { firstName, lastName, phone, email } = this.state.form;
 
     return (
-      <form onSubmit={this.handleSubmit}>
-        <Field name="firstName" label="Name" type="text" value={firstName} onChange={this.handleInputChange} />
-        <Field name="lastName" label="Email" type="text" value={lastName} onChange={this.handleInputChange} />
-        <Field name="phone" label="Phone" type="tel" value={phone} onChange={this.handleInputChange} />
-        <div class="form-group">
-          <label for="comment">Comments:</label>
-          <textarea class="form-control" rows="5" id="comment"></textarea>
+      <div className="container row">
+        <div className="container col-6">
+          <form onSubmit={this.handleSubmit}>
+            <Field name="firstName" label="Name" type="text" value={firstName} onChange={this.handleInputChange} />
+            <Field name="lastName" label="Email" type="text" value={lastName} onChange={this.handleInputChange} />
+            <Field name="phone" label="Phone" type="tel" value={phone} onChange={this.handleInputChange} />
+            <div class="form-group">
+              <label for="comment">Comments:</label>
+              <textarea class="form-control" rows="5" id="comment"></textarea>
+            </div>
+            <button>Add Contact</button>
+          </form>
         </div>
-        <button>Add Contact</button>
-      </form>
+        <div className="container col-6">
+          <h1>Second Section</h1>
+        </div>
+      </div>
     )
   }
 }

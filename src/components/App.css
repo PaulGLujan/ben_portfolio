@@ -8,12 +8,10 @@ h1,h2,h3,h4,h5,a,label, button {
 .imageWindow img, .contactSection {
   max-width: auto;
   height: 80vh;
-  background-color: blue;
 }
 .sliderContainer img, .contactFooter {
   max-width: auto;
   height: 7.2vh;
-  background-color: red;
 }
 .pointer-cursor {
   cursor: pointer;
