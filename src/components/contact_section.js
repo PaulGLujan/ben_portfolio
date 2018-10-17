@@ -1,11 +1,10 @@
-import React, {Component} from 'react';
+import React from 'react';
+import ContactForm from './contact_form';
 
-class contactSection extends Component {
-  render(){
-    return(
-      <h2>Contact Section goes here!</h2>
-    )
-  }
-}
-
-export default contactSection;
+export default ()=>(
+  <div className='col-10'>
+      <ContactForm />
+    <div className="pseudoToggleBar clearfix mt-1 mb-2"></div>
+    <div className="contactFooter"></div>
+  </div>
+)

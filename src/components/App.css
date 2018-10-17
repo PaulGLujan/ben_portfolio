@@ -1,18 +1,24 @@
 html {
   font-size: 10px;
 }
-h1,h2,h3,h4,h5,a {
+h1,h2,h3,h4,h5,a,label, button {
   font-family: 'Eczar', serif;
   color: #6d6c6c
 }
-.sliderContainer img {
-  max-width: auto;
-  height: 7.2vh;
-}
-.imageWindow img {
+.imageWindow img, .contactSection {
   max-width: auto;
   height: 80vh;
 }
+.sliderContainer img, .contactFooter {
+  max-width: auto;
+  height: 7.2vh;
+}
 .pointer-cursor {
   cursor: pointer;
+}
+.pseudoToggleBar {
+  height: 21px;
+}
+.contactForm {
+  height: 300px;
 }
