@@ -59,10 +59,7 @@ class ContactForm extends Component {
                   <button>Send</button>
                 </div>
               </form> */}
-              <ValidatorForm
-                ref="form"
-                onSubmit={this.handleSubmit}
-              >
+              <ValidatorForm ref="form" onSubmit={this.handleSubmit}>
                 <label htmlFor="">Lavel</label>
                 <TextValidator
                   onChange={this.handleChange}
