@@ -55,10 +55,10 @@ class ContactForm extends Component {
           </form>
         </div>
         <div className="container col-6">
-          <h4>Architectural and Landscapes</h4> 
-          <h4>Engagements and Weddings</h4>
-          <h4>Corporate Events</h4>
-          <h4>Profile Pictures</h4>
+          <h5>Architectural and Landscapes</h5> 
+          <h5>Engagements and Weddings</h5>
+          <h5>Corporate Events</h5>
+          <h5>Profile Pictures</h5>
         </div>
       </div>
     )

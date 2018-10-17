@@ -2,7 +2,7 @@ import React from 'react';
 import ContactForm from './contact_form';
 
 export default ()=>(
-  <div>
+  <div className='col-10'>
     <div className="contactSection mt-3">
       <ContactForm />
     </div>
