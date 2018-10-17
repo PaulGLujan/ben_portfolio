@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Field from './contact_form_field';
+import { ValidatorForm } from 'react-form-validator-core';
 
 class ContactForm extends Component {
   constructor(props) {
@@ -45,18 +46,16 @@ class ContactForm extends Component {
           <div className="row">
             <div className="col-2"></div>
             <div className="container col-5 border-right mt-5 contactForm">
-              <form onSubmit={this.handleSubmit}>
-                <Field name="firstName" label="Name:" type="text" value={firstName} onChange={this.handleInputChange} />
-                <Field name="lastName" label="Email:" type="text" value={lastName} onChange={this.handleInputChange} />
-                <Field name="phone" label="Phone:" type="tel" value={phone} onChange={this.handleInputChange} />
-                <div class="form-group">
-                  <label className="row justify-content-end mr-2" for="comment">Comments:</label>
-                  <textarea class="form-control" rows="5" id="comment"></textarea>
+              <ValidatorForm ref="form" onSubmit={this.handleSubmit} instantValidate={false}>
+                <Field name="firstName" label="Name:" type="text" value={firstName} onChange={this.handleInputChange} validators={['required']} errorMessages='this field is required'/>
+                <Field name="email" label="Email:" type="text" value={email} onChange={this.handleInputChange} validators={['required', 'isEmail']} errorMessages={['this field is required', 'email is not valid']}/>
+                <Field name="phone" label="Phone:" type="tel" value={phone} onChange={this.handleInputChange}/>
+                <div className="form-group">
+                  <label className="row justify-content-end mr-2">Comments:</label>
+                  <textarea className="form-control" rows="5" id="comment"></textarea>
                 </div>
-                <div className="row justify-content-end mr-2">
-                  <button>Send</button>
-                </div>
-              </form>
+                <button type="submit">submit</button>
+              </ValidatorForm>
             </div>
             <div className="container col-5">
               <h5>Architectural and Landscapes</h5> 
