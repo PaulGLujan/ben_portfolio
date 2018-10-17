@@ -59,7 +59,7 @@ class ContactForm extends Component {
                 </div>
               </form> */}
               <ValidatorForm ref="form" onSubmit={this.handleSubmit} instantValidate={false}>
-                <Field name="name" label="Name:" type="text" value={firstName} onChange={this.handleInputChange}/>
+                <Field name="firstName" label="Name:" type="text" value={firstName} onChange={this.handleInputChange}/>
                 <Field name="email" label="Email:" type="text" value={email} onChange={this.handleInputChange} />
                 <Field name="phone" label="Phone:" type="tel" value={phone} onChange={this.handleInputChange} />
                 <div className="form-group">
