@@ -58,17 +58,8 @@ class ContactForm extends Component {
                   <button>Send</button>
                 </div>
               </form> */}
-              <ValidatorForm ref="form" onSubmit={this.handleSubmit}>
+              <ValidatorForm ref="form" onSubmit={this.handleSubmit} instantValidate={false}>
                 <Field name="firstName" label="Name:" type="text" value={firstName} onChange={this.handleInputChange} />
-
-                {/* <label htmlFor="">Lavel</label>
-                <TextValidator
-                  onChange={this.handleChange}
-                  name="email"
-                  value={email}
-                  validators={['required', 'isEmail']}
-                  errorMessages={['this field is required', 'email is not valid']}
-                /> */}
                 <button type="submit">submit</button>
               </ValidatorForm>
             </div>
