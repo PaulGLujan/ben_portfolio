@@ -19,12 +19,12 @@ class ContactForm extends Component {
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.assembleEmailString = this.assembleEmailString.bind(this);
+    this.sendEmail = this.sendEmail.bind(this);  
   }
   assembleEmailString(){
     const parts = ["bln717", "yahoo", "com", ".", "@"];
     const email = parts[0] + parts[4] + parts[1] + parts[3] + parts[2];
     const mailto = 'mailto:'+email; 
-    console.log(mailto);
     return <a href={mailto} target="_top">{email}</a>
   }
   handleInputChange(event) {
@@ -45,7 +45,11 @@ class ContactForm extends Component {
 
     this.props.add(this.state.form);
   }
-
+  sendEmail(){
+    console.log('sendEmail');
+    const url = 'http://localhost:8005/test_endpoint.php';
+    axios.get(url);
+  }
   render() {
     const { firstName, lastName, phone, email } = this.state.form;
 
@@ -76,6 +80,7 @@ class ContactForm extends Component {
               <div><this.assembleEmailString/></div>
             </div>
           </div>
+          <h1 onClick={this.sendEmail}>Send email</h1>
         </div>
     )
   }
