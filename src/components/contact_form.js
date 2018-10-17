@@ -59,9 +59,9 @@ class ContactForm extends Component {
                 </div>
               </form> */}
               <ValidatorForm ref="form" onSubmit={this.handleSubmit} instantValidate={false}>
-                <Field name="firstName" label="Name:" type="text" value={firstName} onChange={this.handleInputChange}/>
-                <Field name="email" label="Email:" type="text" value={email} onChange={this.handleInputChange} />
-                <Field name="phone" label="Phone:" type="tel" value={phone} onChange={this.handleInputChange} />
+                <Field name="firstName" label="Name:" type="text" value={firstName} onChange={this.handleInputChange} validators={['required']} errorMessages='this field is required'/>
+                <Field name="email" label="Email:" type="text" value={email} onChange={this.handleInputChange} validators={['required', 'isEmail']} errorMessages={['this field is required', 'email is not valid']}/>
+                <Field name="phone" label="Phone:" type="tel" value={phone} onChange={this.handleInputChange}/>
                 <div className="form-group">
                   <label className="row justify-content-end mr-2">Comments:</label>
                   <textarea className="form-control" rows="5" id="comment"></textarea>
