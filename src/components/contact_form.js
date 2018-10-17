@@ -54,7 +54,7 @@ class ContactForm extends Component {
                   <textarea class="form-control" rows="5" id="comment"></textarea>
                 </div>
                 <div className="row justify-content-end mr-2">
-                  <button>Add Contact</button>
+                  <button>Send</button>
                 </div>
               </form>
             </div>
