@@ -17,8 +17,15 @@ class ContactForm extends Component {
 
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.assembleEmailString = this.assembleEmailString.bind(this);
   }
-
+  assembleEmailString(){
+    const parts = ["bln717", "yahoo", "com", ".", "@"];
+    const email = parts[0] + parts[4] + parts[1] + parts[3] + parts[2];
+    const mailto = 'mailto:'+email; 
+    console.log(mailto);
+    return <a href={mailto} target="_top">{email}</a>
+  }
   handleInputChange(event) {
     const { value, name } = event.target;
 
@@ -64,6 +71,8 @@ class ContactForm extends Component {
               <h5>Engagements and Weddings</h5>
               <h5>Corporate Events</h5>
               <h5>Profile Pictures</h5>
+              <br/>
+              <div><this.assembleEmailString/></div>
             </div>
           </div>
         </div>
