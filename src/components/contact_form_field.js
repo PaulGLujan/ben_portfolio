@@ -4,7 +4,7 @@ export default props => {
 
   return (
     <div className="form-group">
-      <label>{props.label}</label>
+      <label className="row justify-content-end mr-2">{props.label}</label>
       <input {...props} className="form-control" />
     </div>
   )

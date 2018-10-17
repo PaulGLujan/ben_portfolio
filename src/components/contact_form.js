@@ -41,17 +41,19 @@ class ContactForm extends Component {
     const { firstName, lastName, phone, email } = this.state.form;
 
     return (
-      <div className="container row">
+      <div className="row">
         <div className="container col-6 border-right">
           <form onSubmit={this.handleSubmit}>
-            <Field name="firstName" label="Name" type="text" value={firstName} onChange={this.handleInputChange} />
-            <Field name="lastName" label="Email" type="text" value={lastName} onChange={this.handleInputChange} />
-            <Field name="phone" label="Phone" type="tel" value={phone} onChange={this.handleInputChange} />
+            <Field name="firstName" label="Name:" type="text" value={firstName} onChange={this.handleInputChange} />
+            <Field name="lastName" label="Email:" type="text" value={lastName} onChange={this.handleInputChange} />
+            <Field name="phone" label="Phone:" type="tel" value={phone} onChange={this.handleInputChange} />
             <div class="form-group">
-              <label for="comment">Comments:</label>
+              <label className="row justify-content-end mr-2" for="comment">Comments:</label>
               <textarea class="form-control" rows="5" id="comment"></textarea>
             </div>
-            <button>Add Contact</button>
+            <div className="row justify-content-end mr-2">
+              <button>Add Contact</button>
+            </div>
           </form>
         </div>
         <div className="container col-6">
