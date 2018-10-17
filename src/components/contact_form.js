@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Field from './contact_form_field';
 import { ValidatorForm } from 'react-form-validator-core';
+import axios from 'axios';
 
 class ContactForm extends Component {
   constructor(props) {
