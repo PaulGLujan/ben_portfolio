@@ -54,7 +54,9 @@ class ContactForm extends Component {
                   <label className="row justify-content-end mr-2">Comments:</label>
                   <textarea className="form-control" rows="5" id="comment"></textarea>
                 </div>
-                <button type="submit">submit</button>
+                <div className="row justify-content-end mr-2">
+                  <button type="submit">Submit</button>
+                </div>
               </ValidatorForm>
             </div>
             <div className="container col-5">
