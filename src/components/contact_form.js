@@ -41,7 +41,7 @@ class ContactForm extends Component {
     const { firstName, lastName, phone, email } = this.state.form;
 
     return (
-      <div className="row">
+      <div className="contactSection mt-3 row">
         <div className="container col-6 border-right">
           <form onSubmit={this.handleSubmit}>
             <Field name="firstName" label="Name:" type="text" value={firstName} onChange={this.handleInputChange} />
