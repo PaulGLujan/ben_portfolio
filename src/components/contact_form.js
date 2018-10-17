@@ -42,7 +42,7 @@ class ContactForm extends Component {
 
     return (
       <div className="contactSection mt-3 row">
-        <div className="container col-6 border-right">
+        <div className="container col-6 border-right mt-5 contactForm">
           <form onSubmit={this.handleSubmit}>
             <Field name="firstName" label="Name:" type="text" value={firstName} onChange={this.handleInputChange} />
             <Field name="lastName" label="Email:" type="text" value={lastName} onChange={this.handleInputChange} />
