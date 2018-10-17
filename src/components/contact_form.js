@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Field from './contact_form_field';
+import { ValidatorForm } from 'react-form-validator-core';
+import TextValidator from './text_validator';
 
 class ContactForm extends Component {
   constructor(props) {
@@ -45,7 +47,7 @@ class ContactForm extends Component {
           <div className="row">
             <div className="col-2"></div>
             <div className="container col-5 border-right mt-5 contactForm">
-              <form onSubmit={this.handleSubmit}>
+              {/* <form onSubmit={this.handleSubmit}>
                 <Field name="firstName" label="Name:" type="text" value={firstName} onChange={this.handleInputChange} />
                 <Field name="lastName" label="Email:" type="text" value={lastName} onChange={this.handleInputChange} />
                 <Field name="phone" label="Phone:" type="tel" value={phone} onChange={this.handleInputChange} />
@@ -56,7 +58,21 @@ class ContactForm extends Component {
                 <div className="row justify-content-end mr-2">
                   <button>Send</button>
                 </div>
-              </form>
+              </form> */}
+              <ValidatorForm
+                ref="form"
+                onSubmit={this.handleSubmit}
+              >
+                <label htmlFor="">Lavel</label>
+                <TextValidator
+                  onChange={this.handleChange}
+                  name="email"
+                  value={email}
+                  validators={['required', 'isEmail']}
+                  errorMessages={['this field is required', 'email is not valid']}
+                />
+                <button type="submit">submit</button>
+              </ValidatorForm>
             </div>
             <div className="container col-5">
               <h5>Architectural and Landscapes</h5> 
