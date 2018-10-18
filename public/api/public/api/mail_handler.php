@@ -3,8 +3,8 @@
 //     $_POST[$key] = htmlentities( addslashes( $value ));
 // }
 
-require_once('../../server/backendAPI/php_mailer/email_config.php');
-require('../../server/backendAPI/php_mailer/phpmailer/PHPMailer/PHPMailerAutoload.php');
+require_once('php_mailer/email_config.php');
+require('php_mailer/phpmailer/PHPMailer/PHPMailerAutoload.php');
 $mail = new PHPMailer;
 $mail->SMTPDebug = 0;           // Enable verbose debug output. Change to 0 to disable debugging output.
 
@@ -24,12 +24,18 @@ $options = array(
         'allow_self_signed' => true
     )
 );
+
+$name = strip_tags(htmlspecialchars($_POST['name']));
+$email = strip_tags(htmlspecialchars($_POST['email']));
+$phone = strip_tags(htmlspecialchars($_POST['phone']));
+$message = strip_tags(htmlspecialchars($_POST['message']));
+
 $mail->smtpConnect($options);
-$mail->From = 'peaky.finder.mail@gmail.com';  // sender's email address (shows in "From" field)
-$mail->FromName = 'Peaky Finder';   // sender's name (shows in "From" field)
-$mail->addAddress($_POST['email']);  // Add a recipient
+$mail->From = $email;  // sender's email address (shows in "From" field)
+$mail->FromName = '~~!!Portfolio Message!!~~';   // sender's name (shows in "From" field)
+$mail->addAddress('paulglujan@gmail.com');  // Add a recipient
 //$mail->addAddress('ellen@example.com');                        // Name is optional
-$mail->addReplyTo('peaky.finder.mail@gmail.com');                          // Add a reply-to address
+$mail->addReplyTo($email);                          // Add a reply-to address
 //$mail->addCC('cc@example.com');
 //$mail->addBCC('bcc@example.com');
 
@@ -37,8 +43,8 @@ $mail->addReplyTo('peaky.finder.mail@gmail.com');                          // Ad
 //$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
 $mail->isHTML(true);                                  // Set email format to HTML
 
-$mail->Subject = 'Your Peaky Finder Itinerary';
-$mail->Body    = $_POST['body'];
+$mail->Subject = "Porfolio Message from $name";
+$mail->Body    = "You have received a new message from your website contact form.<br><br>"."Here are the details:<br><br>Name: $name<br><br>Email: $email<br><br>Phone: $phone<br><br>Message:<br>$message";
 $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
 if(!$mail->send()) {
