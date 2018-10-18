@@ -47,7 +47,7 @@ class ContactForm extends Component {
   }
   sendEmail(){
     console.log('sendEmail');
-    const url = 'http://localhost:8005/test_endpoint.php';
+    const url = 'http://localhost:8005/PHPMailer/src/PHPMailer.php';
     axios.get(url);
   }
   render() {
