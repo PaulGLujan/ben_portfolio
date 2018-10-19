@@ -1,8 +1,9 @@
 <?php
-// foreach($_POST as $key=>$value){
-//     $_POST[$key] = htmlentities( addslashes( $value ));
-// }
-print('connected to mail_handler');
+header('Access-Control-Allow-Origin: *');  
+header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
+header('Access-Control-Allow-Methods: GET, POST, PUT');
+$_POST = json_decode(file_get_contents("php://input"), true);
+
 require_once('../../server/backendAPI/php_mailer/email_config.php'); //email_config.php
 require('../../server/backendAPI/php_mailer/phpmailer/PHPMailer/PHPMailerAutoload.php'); //PHPMailerAutoload.php
 $mail = new PHPMailer;
