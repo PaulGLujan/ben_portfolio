@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import NavColumn from './nav_column';
 import './App.css';
 import { connect } from 'react-redux';
-import { Route } from 'react-router-dom';
+import { Route, withRouter } from 'react-router-dom';
 import PictureShow from './picture_show';
 import ContactSection from './contact_section';
 
@@ -13,7 +13,7 @@ class App extends Component {
         <div className='container row'>
           <NavColumn />
           <Route exact path='/' component={PictureShow} />
-          <Route exact path='/contact' component={ContactSection} />
+          <Route path='/contact' component={ContactSection} />
           {/* <this.props.mainContent /> */}
         </div>
       </div>
@@ -27,4 +27,4 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps)(App);
+export default withRouter(connect(mapStateToProps)(App));
