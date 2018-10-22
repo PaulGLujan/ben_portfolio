@@ -4,6 +4,7 @@ import './App.css';
 import { connect } from 'react-redux';
 import { Route } from 'react-router-dom';
 import PictureShow from './picture_show';
+import ContactSection from './contact_section';
 
 class App extends Component {
   render(){
@@ -12,6 +13,7 @@ class App extends Component {
         <div className='container row'>
           <NavColumn />
           <Route exact path='/' component={PictureShow} />
+          <Route exact path='/contact' component={ContactSection} />
           {/* <this.props.mainContent /> */}
         </div>
       </div>
