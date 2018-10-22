@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import NavColumn from './nav_column';
 import './App.css';
 import { connect } from 'react-redux';
+import { Route } from 'react-router-dom';
+import PictureShow from './picture_show';
 
 class App extends Component {
   render(){
@@ -9,7 +11,8 @@ class App extends Component {
       <div className="container">
         <div className='container row'>
           <NavColumn />
-          <this.props.mainContent />
+          <Route exact path='/' component={PictureShow} />
+          {/* <this.props.mainContent /> */}
         </div>
       </div>
     )
