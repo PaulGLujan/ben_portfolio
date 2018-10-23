@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import Slider from "react-slick";
-import { connect } from 'react-redux';
 import ImageDiv from './thumbnail_image';
 
 class ThumbnailReel extends Component {
@@ -33,10 +32,4 @@ class ThumbnailReel extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    // gallery: state.gallery.gallery,
-  }
-}
-
-export default connect(mapStateToProps)(ThumbnailReel);
+export default ThumbnailReel;
