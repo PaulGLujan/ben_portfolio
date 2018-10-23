@@ -35,7 +35,7 @@ class ThumbnailReel extends Component {
 
 function mapStateToProps(state) {
   return {
-    gallery: state.gallery.gallery,
+    // gallery: state.gallery.gallery,
   }
 }
 

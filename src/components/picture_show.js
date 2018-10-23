@@ -13,6 +13,6 @@ export default (props)=>(
       <Caption />
       <ImageToggle />
     </div>
-    <ThumbnailReel/>
+    <ThumbnailReel {...props}/>
   </div>
 )
