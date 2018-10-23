@@ -7,10 +7,10 @@ export function updatePicPos(pos){
   }
 }
 
-export function changeGallery(gallery){
+export function changeGallery(gallery, type){
   return{  
     type: types.UPDATE_GALLERY,
-    payload: gallery,
+    payload: {gallery, type},
   }
 }
 

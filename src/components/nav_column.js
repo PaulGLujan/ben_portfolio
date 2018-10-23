@@ -15,11 +15,11 @@ class NavColumn extends Component {
   }
   portraitClick(){
     this.props.updateMainSection(PictureShow, 'gallery');
-    this.props.changeGallery(portraits);
+    this.props.changeGallery(portraits, 'portraits');
   }
   landscapesClick(){
     this.props.updateMainSection(PictureShow, 'gallery');
-    this.props.changeGallery(landscapes);
+    this.props.changeGallery(landscapes, 'landscapes');
   }
   contactClick(){
     this.props.updateMainSection(ContactSection, 'contact');

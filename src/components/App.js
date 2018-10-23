@@ -21,6 +21,7 @@ function mapStateToProps(state) {
   return {
     mainComponent: state.mainContent.mainComponent,
     contentType: state.mainContent.contentType,
+    galleryType: state.gallery.galleryType,
   }
 }
 
