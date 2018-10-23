@@ -18,7 +18,6 @@ class ImageWindow extends Component {
     return <ImageDiv imgLg={imgLg} imgSm={imgSm} alt={alt}/>
   }
   assembleGalleryDivs(){
-    console.log(this.props)
     const galArr = this.props.gallery;
     const outputArr = [];
     for (let i = 0; i < galArr.length; i++) {
