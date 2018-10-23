@@ -13,7 +13,7 @@ class App extends Component {
       <div className="container">
         <div className='container row'>
           <NavColumn />
-          <Route exact path='/' component={PictureShow} />
+          <Route exact path='/' render={(props) => (<PictureShow {...props} gallery={landscapes} />)} />
           <Route path='/gallery/landscapes' 
             render={(props)=>(<PictureShow {...props} gallery={landscapes}/>)}
           />
