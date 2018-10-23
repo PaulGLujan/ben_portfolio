@@ -14,9 +14,9 @@ export function changeGallery(gallery){
   }
 }
 
-export function updateMainSection(section){
+export function updateMainSection(section, type){
   return{
     type: types.UPDATE_MAIN_SECTION,
-    payload: section
+    payload: {section, type}
   }
 }

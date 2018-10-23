@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 
 class App extends Component {
   render(){
+    console.log(this.props)
     return(
       <div className="container">
         <div className='container row'>
@@ -19,6 +20,7 @@ class App extends Component {
 function mapStateToProps(state) {
   return {
     mainComponent: state.mainContent.mainComponent,
+    contentType: state.mainContent.contentType,
   }
 }
 
