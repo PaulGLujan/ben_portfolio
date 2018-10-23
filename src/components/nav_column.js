@@ -1,32 +1,8 @@
 import React, {Component} from 'react';
-import {changeGallery, updateMainSection} from '../actions/index';
-import {connect} from 'react-redux';
-import portraits from '../assets/images/portraits/portraits';
-import landscapes from '../assets/images/landscapes/landscapes';
-import ContactSection from './contact_section';
-import PictureShow from './picture_show';
 import {Link} from 'react-router-dom';
 
 class NavColumn extends Component {
-  constructor(props){
-    super(props);
-    this.portraitClick = this.portraitClick.bind(this);
-    this.landscapesClick = this.landscapesClick.bind(this);
-    this.contactClick = this.contactClick.bind(this);
-  }
-  portraitClick(){
-    this.props.updateMainSection(PictureShow);
-    this.props.changeGallery(portraits);
-  }
-  landscapesClick(){
-    this.props.updateMainSection(PictureShow);
-    this.props.changeGallery(landscapes);
-  }
-  contactClick(){
-    this.props.updateMainSection(ContactSection);
-  }
   render(){
-    const {landscapesClick, portraitClick, contactClick} = this;
     return(
       <div className="col-2 flex-column justify-content-between d-flex">
         <div className="text-center mt-5">
@@ -53,4 +29,4 @@ class NavColumn extends Component {
   }
 }
 
-export default connect(null, {changeGallery, updateMainSection})(NavColumn);
+export default NavColumn;
