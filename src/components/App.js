@@ -9,7 +9,7 @@ class App extends Component {
       <div className="container">
         <div className='container row'>
           <NavColumn />
-          <this.props.mainContent />
+          <this.props.mainComponent />
         </div>
       </div>
     )
@@ -18,7 +18,9 @@ class App extends Component {
 
 function mapStateToProps(state) {
   return {
-    mainContent: state.mainContent.mainContent,
+    mainComponent: state.mainContent.mainComponent,
+    contentType: state.mainContent.contentType,
+    galleryType: state.gallery.galleryType,
   }
 }
 

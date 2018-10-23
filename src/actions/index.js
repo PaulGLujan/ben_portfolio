@@ -7,16 +7,16 @@ export function updatePicPos(pos){
   }
 }
 
-export function changeGallery(gallery){
+export function changeGallery(gallery, type){
   return{  
     type: types.UPDATE_GALLERY,
-    payload: gallery,
+    payload: {gallery, type},
   }
 }
 
-export function updateMainSection(section){
+export function updateMainSection(section, type){
   return{
     type: types.UPDATE_MAIN_SECTION,
-    payload: section
+    payload: {section, type}
   }
 }

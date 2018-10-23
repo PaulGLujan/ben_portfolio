@@ -14,15 +14,15 @@ class NavColumn extends Component {
     this.contactClick = this.contactClick.bind(this);
   }
   portraitClick(){
-    this.props.updateMainSection(PictureShow);
-    this.props.changeGallery(portraits);
+    this.props.updateMainSection(PictureShow, 'gallery');
+    this.props.changeGallery(portraits, 'portraits');
   }
   landscapesClick(){
-    this.props.updateMainSection(PictureShow);
-    this.props.changeGallery(landscapes);
+    this.props.updateMainSection(PictureShow, 'gallery');
+    this.props.changeGallery(landscapes, 'landscapes');
   }
   contactClick(){
-    this.props.updateMainSection(ContactSection);
+    this.props.updateMainSection(ContactSection, 'contact');
   }
   render(){
     const {landscapesClick, portraitClick, contactClick} = this;
