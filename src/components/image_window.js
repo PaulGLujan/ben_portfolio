@@ -1,6 +1,4 @@
 import React, {Component} from 'react';
-// import { Carousel } from 'react-responsive-carousel';
-// import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Slider from "react-slick";
 import {connect} from 'react-redux';
 import ImageDiv from './carousel_image';
@@ -54,7 +52,6 @@ class ImageWindow extends Component {
 function mapStateToProps(state) {
   return {
     position: state.picturePosition.position,
-    // gallery: state.gallery.gallery,
   }
 }
 
