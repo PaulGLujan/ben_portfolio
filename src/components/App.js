@@ -11,7 +11,8 @@ class App extends Component {
       <div className="container">
         <div className='container row'>
           <NavColumn />
-          <Route path="/" component={mainComponent} />
+          <Route exact path='/' component={mainComponent} />
+          <Route path={`/${galleryType}`} component={mainComponent} />
         </div>
       </div>
     )
