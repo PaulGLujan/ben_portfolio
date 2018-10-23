@@ -2,14 +2,16 @@ import React, {Component} from 'react';
 import NavColumn from './nav_column';
 import './App.css';
 import { connect } from 'react-redux';
+import { Route } from 'react-router-dom';
 
 class App extends Component {
   render(){
+    const {mainComponent, galleryType} = this.props;
     return(
       <div className="container">
         <div className='container row'>
           <NavColumn />
-          <this.props.mainComponent />
+          <Route path="/" component={mainComponent} />
         </div>
       </div>
     )
