@@ -37,10 +37,12 @@ class NavColumn extends Component {
           <h1><i className="fas fa-camera-retro"></i></h1>
         </div>
         <div className="mb-5 ml-5">
-          <h3 className='mt-1 pointer-cursor' onClick={landscapesClick}>
-            <Link to='/'>Landscapes</Link>
+          <h3 className='mt-1 pointer-cursor'>
+            <Link to='/gallery/landscapes'>Landscapes</Link>
           </h3>
-          <h3 className='mt-1 pointer-cursor' onClick={portraitClick}>Portraits</h3>
+          <h3 className='mt-1 pointer-cursor'>
+            <Link to='/gallery/portraits'>Portraits</Link>
+          </h3>
           <h3 className='mt-1 pointer-cursor'>
             <Link to='/contact'>Contact</Link>
           </h3>
