@@ -42,14 +42,11 @@ class ContactForm extends Component {
     const { name, email, phone, message } = this.state.form;
     const url = 'http://localhost:8005/mail_handler.php';
     axios.post(url, {
-      name: name,
-      email: email,
-      phone: phone,
-      message: message,
+      name,
+      email,
+      phone,
+      message
     });
-  }
-  onKeyDown(){
-    console.log('KKey donw')
   }
   render() {
     const { name, email, phone, message } = this.state.form;

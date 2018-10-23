@@ -1,7 +1,11 @@
 <?php
+
 header('Access-Control-Allow-Origin: *');  
 header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
 header('Access-Control-Allow-Methods: GET, POST, PUT');
+if($_SERVER['REQUEST_METHOD']==="OPTIONS"){
+  exit();
+} 
 $_POST = json_decode(file_get_contents("php://input"), true);
 
 require_once('../../server/backendAPI/php_mailer/email_config.php'); //email_config.php
