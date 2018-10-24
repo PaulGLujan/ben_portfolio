@@ -4,6 +4,8 @@ import React, {Component} from 'react';
 import Slider from "react-slick";
 import {connect} from 'react-redux';
 import ImageDiv from './carousel_image';
+import {withRouter} from 'react-router-dom';
+import landscapes from '../assets/images/landscapes/landscapes';
 
 class ImageWindow extends Component {
   constructor(props){
@@ -30,6 +32,7 @@ class ImageWindow extends Component {
     return outputArr;
   }
   render(){
+    console.log('Match in render of ImageWindow', this.props.match);
     const settings = {
       dots: false,
       infinite: true,
@@ -57,4 +60,4 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps)(ImageWindow);
+export default withRouter(connect(mapStateToProps)(ImageWindow));
