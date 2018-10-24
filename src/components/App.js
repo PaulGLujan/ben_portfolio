@@ -17,7 +17,7 @@ class App extends Component {
         <div className='container row'>
           <NavColumn />
           <Route exact path='/' component={mainComponent} />
-          <Route path="/:content/:gallery/:photo_id" component={PictureShow} />
+          <Route path="/:content/:gallery/:position" component={PictureShow} />
           <Route path="/portraits/:portrait_id" component={()=><PictureShow photos={Portraits}/>} />
           <Route path="/contact" component={Contact} />
         </div>

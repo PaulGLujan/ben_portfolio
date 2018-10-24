@@ -16,9 +16,11 @@ class ImageWindow extends Component {
     this.getGalleryFromURL = this.getGalleryFromURL.bind(this);
   }
   componentDidUpdate(prevProps) {
-    if (prevProps.position !== this.props.position) {
-      this.slider.slickGoTo(this.props.position);
-    }
+    const position = this.props.match.params.position;
+    console.log(position);
+    // if (prevProps.position !== this.props.position) {
+    //   this.slider.slickGoTo(this.props.position);
+    // }
   }
   assembleImageDiv(imgLg, imgSm, alt){
     return <ImageDiv imgLg={imgLg} imgSm={imgSm} alt={alt}/>
@@ -43,6 +45,7 @@ class ImageWindow extends Component {
     return outputArr;
   }
   render(){
+    const position = parseInt(this.props.match.params.position);
     const settings = {
       dots: false,
       infinite: true,
@@ -52,6 +55,7 @@ class ImageWindow extends Component {
       fade: true,
       arrows: false,
       lazyLoad: true,
+      initialSlide: position,
     };
     return(
       <div className="imageWindow">
