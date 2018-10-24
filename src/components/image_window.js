@@ -68,7 +68,6 @@ class ImageWindow extends Component {
 function mapStateToProps(state) {
   return {
     position: state.picturePosition.position,
-    gallery: state.gallery.gallery,
   }
 }
 
