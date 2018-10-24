@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 import NavColumn from './nav_column';
 import './App.css';
-import { connect } from 'react-redux';
+import { Route } from 'react-router-dom';
+import PictureShow from './picture_show.js';
+import Contact from './contact_section';
 
 class App extends Component {
   render(){
@@ -9,19 +11,13 @@ class App extends Component {
       <div className="container">
         <div className='container row'>
           <NavColumn />
-          <this.props.mainComponent />
+          <Route exact path='/' component={()=>(<h1>Landing Page</h1>)} />
+          <Route path="/:content/:gallery/:position" component={PictureShow} />
+          <Route path="/contact" component={Contact} />
         </div>
       </div>
     )
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    mainComponent: state.mainContent.mainComponent,
-    contentType: state.mainContent.contentType,
-    galleryType: state.gallery.galleryType,
-  }
-}
-
-export default connect(mapStateToProps)(App);
+export default App;

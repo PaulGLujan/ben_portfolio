@@ -5,6 +5,7 @@ import portraits from '../assets/images/portraits/portraits';
 import landscapes from '../assets/images/landscapes/landscapes';
 import ContactSection from './contact_section';
 import PictureShow from './picture_show';
+import { Link } from 'react-router-dom';
 
 class NavColumn extends Component {
   constructor(props){
@@ -36,9 +37,15 @@ class NavColumn extends Component {
           <h1><i className="fas fa-camera-retro"></i></h1>
         </div>
         <div className="mb-5 ml-5">
-          <h3 className='mt-1 pointer-cursor' onClick={landscapesClick}>Landscapes</h3>
-          <h3 className='mt-1 pointer-cursor' onClick={portraitClick}>Portraits</h3>
-          <h3 className='mt-1 pointer-cursor' onClick={contactClick}>Contact</h3>
+          <h3 className='mt-1 pointer-cursor' onClick={landscapesClick}>
+            <Link to={`/gallery/landscapes/${this.props.position}`}>Landscapes</Link>
+          </h3>
+          <h3 className='mt-1 pointer-cursor' onClick={portraitClick}>
+            <Link to={`/gallery/portraits/${this.props.position}`}>Portraits</Link>
+          </h3>
+          <h3 className='mt-1 pointer-cursor' onClick={contactClick}>
+            <Link to='/contact'>Contact</Link>
+          </h3>
           <h3><a target='_blank' href="https://www.instagram.com/another.passenger/"><i className="fab fa-instagram"></i></a></h3>
         </div>
       </div>
@@ -46,4 +53,12 @@ class NavColumn extends Component {
   }
 }
 
-export default connect(null, {changeGallery, updateMainSection})(NavColumn);
+function mapStateToProps(state) {
+  return {
+    contentType: state.mainContent.contentType,
+    galleryType: state.gallery.galleryType,
+    position: state.picturePosition.position
+  }
+}
+
+export default connect(mapStateToProps, {changeGallery, updateMainSection})(NavColumn);
