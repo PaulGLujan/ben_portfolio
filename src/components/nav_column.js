@@ -38,10 +38,10 @@ class NavColumn extends Component {
         </div>
         <div className="mb-5 ml-5">
           <h3 className='mt-1 pointer-cursor' onClick={landscapesClick}>
-            <Link to={`/gallery/${this.props.position}`}>Landscapes</Link>
+            <Link to={`/gallery/landscapes/${this.props.position}`}>Landscapes</Link>
           </h3>
           <h3 className='mt-1 pointer-cursor' onClick={portraitClick}>
-            <Link to={`/portraits/${this.props.position}`}>Portraits</Link>
+            <Link to={`/gallery/portraits/${this.props.position}`}>Portraits</Link>
           </h3>
           <h3 className='mt-1 pointer-cursor' onClick={contactClick}>
             <Link to='/contact'>Contact</Link>
