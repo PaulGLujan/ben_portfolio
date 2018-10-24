@@ -12,6 +12,7 @@ class ImageWindow extends Component {
     super(props);
     this.assembleImageDiv = this.assembleImageDiv.bind(this);
     this.assembleGalleryDivs = this.assembleGalleryDivs.bind(this);
+    this.getGalleryFromURL = this.getGalleryFromURL.bind(this);
   }
   componentDidUpdate(prevProps) {
     if (prevProps.position !== this.props.position) {
@@ -21,8 +22,15 @@ class ImageWindow extends Component {
   assembleImageDiv(imgLg, imgSm, alt){
     return <ImageDiv imgLg={imgLg} imgSm={imgSm} alt={alt}/>
   }
+  getGalleryFromURL(){
+    const galleryStr = this.props.match.params.gallery;
+    switch (galleryStr) {
+      case 'landscapes':
+        return landscapes;
+    }
+  }
   assembleGalleryDivs(){
-    const galArr = this.props.gallery;
+    let galArr = this.getGalleryFromURL();
     const outputArr = [];
     for (let i = 0; i < galArr.length; i++) {
       outputArr.push(
@@ -32,7 +40,6 @@ class ImageWindow extends Component {
     return outputArr;
   }
   render(){
-    console.log('Match in render of ImageWindow', this.props.match);
     const settings = {
       dots: false,
       infinite: true,
