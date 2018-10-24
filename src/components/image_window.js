@@ -6,6 +6,7 @@ import {connect} from 'react-redux';
 import ImageDiv from './carousel_image';
 import {withRouter} from 'react-router-dom';
 import landscapes from '../assets/images/landscapes/landscapes';
+import portraits from '../assets/images/portraits/portraits';
 
 class ImageWindow extends Component {
   constructor(props){
@@ -27,6 +28,8 @@ class ImageWindow extends Component {
     switch (galleryStr) {
       case 'landscapes':
         return landscapes;
+      case 'portraits':
+        return portraits; 
     }
   }
   assembleGalleryDivs(){
