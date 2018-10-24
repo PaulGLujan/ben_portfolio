@@ -12,7 +12,7 @@ class App extends Component {
         <div className='container row'>
           <NavColumn />
           <Route exact path='/' component={mainComponent} />
-          <Route path={`/${galleryType}`} component={mainComponent} />
+          <Route path="/:galleryType" component={mainComponent} />
         </div>
       </div>
     )
