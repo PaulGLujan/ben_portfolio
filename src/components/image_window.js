@@ -16,11 +16,9 @@ class ImageWindow extends Component {
     this.getGalleryFromURL = this.getGalleryFromURL.bind(this);
   }
   componentDidUpdate(prevProps) {
-    const position = this.props.match.params.position;
-    console.log(position);
-    // if (prevProps.position !== this.props.position) {
-    //   this.slider.slickGoTo(this.props.position);
-    // }
+    if (prevProps.position !== this.props.position) {
+      this.slider.slickGoTo(this.props.position);
+    }
   }
   assembleImageDiv(imgLg, imgSm, alt){
     return <ImageDiv imgLg={imgLg} imgSm={imgSm} alt={alt}/>
