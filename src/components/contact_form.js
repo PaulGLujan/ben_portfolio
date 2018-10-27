@@ -47,10 +47,7 @@ class ContactForm extends Component {
       phone: phone,
       message: message,
     });
-  }
-  onKeyDown(){
-    console.log('KKey donw')
-  }
+  } 
   render() {
     const { name, email, phone, message } = this.state.form;
 
