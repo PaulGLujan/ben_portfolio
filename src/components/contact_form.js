@@ -36,7 +36,6 @@ class ContactForm extends Component {
   handleSubmit(event) {
     event.preventDefault();
     this.sendEmail();
-    console.log('handleSubmit called, form values are:', this.state.form);
   }
   sendEmail(){
     const { name, email, phone, message } = this.state.form;
