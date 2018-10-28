@@ -45,7 +45,8 @@ class ContactForm extends Component {
       email: email,
       phone: phone,
       message: message,
-    });
+    }).then(()=>{console.log('axios done')});
+    console.log('Axios in progress');
   } 
   render() {
     const { name, email, phone, message } = this.state.form;
