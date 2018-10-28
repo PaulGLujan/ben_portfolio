@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Field from './contact_form_field';
 import { ValidatorForm } from 'react-form-validator-core';
 import axios from 'axios';
+import ReactLoading from 'react-loading';
 
 class ContactForm extends Component {
   constructor(props) {
@@ -18,6 +19,7 @@ class ContactForm extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.assembleEmailString = this.assembleEmailString.bind(this);
     this.sendEmail = this.sendEmail.bind(this);  
+    this.addLoadingAnimation = this.addLoadingAnimation.bind(this);
   }
   assembleEmailString(){
     const parts = ["bln717", "yahoo", "com", ".", "@"];
@@ -48,6 +50,12 @@ class ContactForm extends Component {
     }).then(()=>{console.log('axios done')});
     console.log('Axios in progress');
   } 
+  addLoadingAnimation(){
+    return(
+
+      <ReactLoading type='cylon' color='red' height='1rem' width='4rem' />
+    ) 
+  }
   render() {
     const { name, email, phone, message } = this.state.form;
 
@@ -66,6 +74,7 @@ class ContactForm extends Component {
                 </div>
                 <div className="row justify-content-end mr-2">
                   <button type="submit">Submit</button>
+                  <this.addLoadingAnimation />
                 </div>
               </ValidatorForm>
             </div>
