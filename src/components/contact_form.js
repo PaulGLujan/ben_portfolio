@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Field from './contact_form_field';
 import { ValidatorForm } from 'react-form-validator-core';
 import axios from 'axios';
+import ReactLoading from 'react-loading';
 
 class ContactForm extends Component {
   constructor(props) {
@@ -11,13 +12,15 @@ class ContactForm extends Component {
         name: '',
         email: '',
         phone: '',
-        message: ''
-      }
+        message: '',
+      }, 
+      status: 'notSent',
     }
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.assembleEmailString = this.assembleEmailString.bind(this);
     this.sendEmail = this.sendEmail.bind(this);  
+    this.SubmitButton = this.SubmitButton.bind(this);
   }
   assembleEmailString(){
     const parts = ["bln717", "yahoo", "com", ".", "@"];
@@ -36,7 +39,6 @@ class ContactForm extends Component {
   handleSubmit(event) {
     event.preventDefault();
     this.sendEmail();
-    console.log('handleSubmit called, form values are:', this.state.form);
   }
   sendEmail(){
     const { name, email, phone, message } = this.state.form;
@@ -46,10 +48,27 @@ class ContactForm extends Component {
       email: email,
       phone: phone,
       message: message,
-    });
-  }
-  onKeyDown(){
-    console.log('KKey donw')
+    }).then(()=>{
+      this.setState(
+          {...this.state, status: 'sent'}
+        )
+      });
+    //Next line runs before asyncronous mail sending is returned
+    this.setState(
+      { ...this.state, status: 'waiting' }
+    )
+  } 
+  SubmitButton(props){
+    if(props.status === 'waiting')
+      return(
+        <div className='waitingIcon'>
+          <ReactLoading type='cylon' color='#6d6c6c' height='1rem' width='4rem' />
+        </div>
+      ) 
+    else if(props.status === 'sent'){
+      return <h3>Sent</h3>;
+    }
+    return <button type="submit">Submit</button>;
   }
   render() {
     const { name, email, phone, message } = this.state.form;
@@ -68,7 +87,7 @@ class ContactForm extends Component {
                 <textarea name='message' className="form-control" rows="5" id="comment" value={message} onChange={this.handleInputChange}></textarea>
                 </div>
                 <div className="row justify-content-end mr-2">
-                  <button type="submit">Submit</button>
+                  <this.SubmitButton status={this.state.status}/>
                 </div>
               </ValidatorForm>
             </div>
