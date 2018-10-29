@@ -20,7 +20,7 @@ class ContactForm extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.assembleEmailString = this.assembleEmailString.bind(this);
     this.sendEmail = this.sendEmail.bind(this);  
-    this.addLoadingAnimation = this.addLoadingAnimation.bind(this);
+    this.SubmitButton = this.SubmitButton.bind(this);
   }
   assembleEmailString(){
     const parts = ["bln717", "yahoo", "com", ".", "@"];
@@ -41,7 +41,6 @@ class ContactForm extends Component {
     this.sendEmail();
   }
   sendEmail(){
-    console.log('sendEmail initiated', this.state);
     const { name, email, phone, message } = this.state.form;
     const url = 'http://localhost:8005/mail_handler.php';
     axios.post(url, {
@@ -49,24 +48,23 @@ class ContactForm extends Component {
       email: email,
       phone: phone,
       message: message,
-    }).then(
-      ()=>{
-        this.setState(
+    }).then(()=>{
+      this.setState(
           {...this.state, status: 'sent'}
         )
-        console.log('axios done', this.state);
       });
+
     this.setState(
-      { ...this.state, status: 'waiting' },
-      () => {
-        console.log('Axios in progress', this.state);
-}
+      { ...this.state, status: 'waiting' }
     )
   } 
-  addLoadingAnimation(){
-    return(
-      <ReactLoading type='cylon' color='red' height='1rem' width='4rem' />
-    ) 
+  SubmitButton(props){
+    if(props.status === 'waiting')
+      return <ReactLoading type='cylon' color='red' height='1rem' width='4rem' />;
+    else if(props.status === 'sent'){
+      return <h3>Sent</h3>;
+    }
+    return <button type="submit">Submit</button>;
   }
   render() {
     const { name, email, phone, message } = this.state.form;
@@ -86,7 +84,7 @@ class ContactForm extends Component {
                 </div>
                 <div className="row justify-content-end mr-2">
                   <button type="submit">Submit</button>
-                  <this.addLoadingAnimation />
+                  <this.SubmitButton status={this.state.status}/>
                 </div>
               </ValidatorForm>
             </div>
