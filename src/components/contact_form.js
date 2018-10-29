@@ -53,14 +53,18 @@ class ContactForm extends Component {
           {...this.state, status: 'sent'}
         )
       });
-
+    //Next line runs before asyncronous mail sending is returned
     this.setState(
       { ...this.state, status: 'waiting' }
     )
   } 
   SubmitButton(props){
     if(props.status === 'waiting')
-      return <ReactLoading type='cylon' color='red' height='1rem' width='4rem' />;
+      return(
+        <div className='waitingIcon'>
+          <ReactLoading type='cylon' color='#6d6c6c' height='1rem' width='4rem' />
+        </div>
+      ) 
     else if(props.status === 'sent'){
       return <h3>Sent</h3>;
     }
@@ -83,7 +87,6 @@ class ContactForm extends Component {
                 <textarea name='message' className="form-control" rows="5" id="comment" value={message} onChange={this.handleInputChange}></textarea>
                 </div>
                 <div className="row justify-content-end mr-2">
-                  <button type="submit">Submit</button>
                   <this.SubmitButton status={this.state.status}/>
                 </div>
               </ValidatorForm>
