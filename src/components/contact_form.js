@@ -12,8 +12,9 @@ class ContactForm extends Component {
         name: '',
         email: '',
         phone: '',
-        message: ''
-      }
+        message: '',
+      }, 
+      status: 'notSent',
     }
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -40,6 +41,7 @@ class ContactForm extends Component {
     this.sendEmail();
   }
   sendEmail(){
+    console.log('sendEmail initiated', this.state);
     const { name, email, phone, message } = this.state.form;
     const url = 'http://localhost:8005/mail_handler.php';
     axios.post(url, {
@@ -47,12 +49,22 @@ class ContactForm extends Component {
       email: email,
       phone: phone,
       message: message,
-    }).then(()=>{console.log('axios done')});
-    console.log('Axios in progress');
+    }).then(
+      ()=>{
+        this.setState(
+          {...this.state, status: 'sent'}
+        )
+        console.log('axios done', this.state);
+      });
+    this.setState(
+      { ...this.state, status: 'waiting' },
+      () => {
+        console.log('Axios in progress', this.state);
+}
+    )
   } 
   addLoadingAnimation(){
     return(
-
       <ReactLoading type='cylon' color='red' height='1rem' width='4rem' />
     ) 
   }
