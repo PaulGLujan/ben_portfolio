@@ -13,13 +13,14 @@ class ContactForm extends Component {
         email: '',
         phone: '',
         message: ''
-      }
+      },
+      buttonArea: <button type="submit">Submit</button>,
     }
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.assembleEmailString = this.assembleEmailString.bind(this);
     this.sendEmail = this.sendEmail.bind(this);  
-    this.addLoadingAnimation = this.addLoadingAnimation.bind(this);
+    this.toggleLoadingAnimation = this.toggleLoadingAnimation.bind(this);
   }
   assembleEmailString(){
     const parts = ["bln717", "yahoo", "com", ".", "@"];
@@ -49,12 +50,19 @@ class ContactForm extends Component {
       message: message,
     }).then(()=>{console.log('axios done')});
     console.log('Axios in progress');
+    this.toggleLoadingAnimation('loading');
   } 
-  addLoadingAnimation(){
-    return(
-
-      <ReactLoading type='cylon' color='red' height='1rem' width='4rem' />
-    ) 
+  toggleLoadingAnimation(status){
+    switch(status){
+      case 'loading':
+        console.log('loading')
+        this.setState({loadStatus: 'loading'})
+        return <ReactLoading type='cylon' color='red' height='1rem' width='4rem'/>
+      case 'done':
+        return <p>Sent</p>
+      default:
+        return <button type="submit">Submit</button>
+    }
   }
   render() {
     const { name, email, phone, message } = this.state.form;
@@ -73,8 +81,8 @@ class ContactForm extends Component {
                 <textarea name='message' className="form-control" rows="5" id="comment" value={message} onChange={this.handleInputChange}></textarea>
                 </div>
                 <div className="row justify-content-end mr-2">
-                  <button type="submit">Submit</button>
-                  <this.addLoadingAnimation />
+                  {/* <button type="submit">Submit</button> */}
+                  <this.state.buttonArea />
                 </div>
               </ValidatorForm>
             </div>
