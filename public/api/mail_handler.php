@@ -4,8 +4,8 @@ header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Ac
 header('Access-Control-Allow-Methods: GET, POST, PUT');
 $_POST = json_decode(file_get_contents("php://input"), true);
 
-require_once('../../server/backendAPI/php_mailer/email_config.php'); //email_config.php
-require('../../server/backendAPI/php_mailer/phpmailer/PHPMailer/PHPMailerAutoload.php'); //PHPMailerAutoload.php
+require_once('php_mailer/email_config.php'); //email_config.php
+require('php_mailer/phpmailer/PHPMailer/PHPMailerAutoload.php'); //PHPMailerAutoload.php
 $mail = new PHPMailer;
 $mail->SMTPDebug = 0;           // Enable verbose debug output. Change to 0 to disable debugging output.
 

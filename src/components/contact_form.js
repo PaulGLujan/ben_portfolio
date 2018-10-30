@@ -42,6 +42,7 @@ class ContactForm extends Component {
   }
   sendEmail(){
     const { name, email, phone, message } = this.state.form;
+    const url = '/api/mail_handler.php';
     const url = 'http://localhost:8005/mail_handler.php';
     axios.post(url, {
       name: name,
