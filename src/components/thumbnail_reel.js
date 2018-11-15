@@ -4,11 +4,19 @@ import { connect } from 'react-redux';
 import ImageDiv from './thumbnail_image';
 
 class ThumbnailReel extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      position: 0,
+    }
+  }
+
   assembleImageDiv(src, alt, name, key) {
     return <ImageDiv src={src} alt={alt} name={name} key={key}/>
   }
 
   render(){
+    const position = this.state.position;
     const settings = {
       dots: true,
       infinite: false,
@@ -17,6 +25,7 @@ class ThumbnailReel extends Component {
       slidesToScroll: 1,
       arrows: false,
       lazyLoad: true,
+      initialSlide: position,
     };
     const galArr = this.props.gallery;
     const thumbnailArr = [];
